@@ -4,7 +4,7 @@ import Navigator from '../layout/Navigator';
 import Footer from '../layout/Footer';
 import Home from '../pages/Home';
 import Router from './Router';
-import Login from '../pages/Login';
+import LoginPage from '../pages/LoginPage';
 import Contact from '../pages/Contact';
 import Games from '../pages/Games';
 import Cart from '../pages/Cart';
@@ -21,7 +21,7 @@ export {
     Footer,
     Router,
     Home,
-    Login,
+    LoginPage,
     Games,
     Contact,
     Cart,

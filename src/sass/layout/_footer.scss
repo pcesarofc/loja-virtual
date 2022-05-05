@@ -1,4 +1,74 @@
 .footer-page{
     @include color($primary-red-color, $white-color);
-    @include display(flex, row, space-evenly, start)
+    @include display(flex, row, space-evenly, center);
+
+    .logo-footer{
+        @include dimension(140px, auto);
+    }
+
+    .info-footer{
+        
+        .nav-footer{
+            @include padding(0, 0, 0, 0);
+            @include margin(0, 0, 0, 0);
+            list-style: none;
+
+            li{
+
+                a{
+                    @include font(18px, $light);
+                    @include color(transparent, $white-color);
+                    @include text(start, none);
+                    @include dimension(auto, auto);
+
+                    &:hover{
+                        @include color(transparent, $gold-color);
+                    }
+                }
+            }
+        }
+    }
+
+    .subscribe{
+
+        h4{
+
+        }
+
+        p{
+
+        }
+
+        .input-text-footer{
+
+            .input-search-footer{
+                @include border(1px, solid, $black-color);
+                @include dimension(150px, auto);
+
+                &:focus{
+                    box-shadow: 0 0 0 0;
+                    outline: 0;
+                }
+            }
+    
+            svg{
+                @include margin(0, 0,  5px, 0);
+    
+                &:hover{
+                    @include color(transparent, $gold-color);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:500px) {
+    
+    .footer-page{
+    
+        .logo-footer{
+            @include display(none, row, center, center);
+        }
+    }
 }

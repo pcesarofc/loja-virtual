@@ -23,6 +23,16 @@
                 @include color($primary-red-color, $white-color);
             }
         }
+
+        .dropdown-item{
+            div{
+                a{
+                    @include padding(0, 0, 0, 100px);
+                    @include text(auto, none);
+                    @include color(transparent, $primary-red-color);
+                }
+            }
+        }
     }
 
     .user-name{

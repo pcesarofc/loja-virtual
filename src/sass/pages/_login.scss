@@ -1,0 +1,89 @@
+.login-page{
+
+    article{
+
+        .section-login{
+            @include display(flex, row, center, center);
+            
+            .login-form{
+                @include margin(50px, 80px, 0, 0);
+                @include dimension(300px, 400px);
+                @include border(1px, solid, $primary-gray-color);
+                @include border-radius(10px, 10px, 10px, 10px);
+                @include display(flex, column, space-evenly, center);
+                @include padding(0, 20, 30px, 30px);
+                box-shadow: 1px 5px 8px -1px rgba(0,0,0,0.65);
+
+                .title-form{
+                    @include font(24px, $bold);
+                    @include color(transparent, $primary-red-color);
+                }
+
+                .input-text{
+                    @include dimension(190px, auto);
+
+                    .email, .password{
+                        @include border(1px, solid, $primary-gray-color);
+                        @include border-radius(5px, 5px, 5px, 5px);
+                        @include margin(0, 10px, 0, 0);
+                        @include padding(5px, 5px, 10px, 10px);
+
+                        &:focus{
+                            box-shadow: 0 0 0 0;
+                            outline: 0;
+                        }
+                    }
+                }
+
+                .check-menu{
+                    @include margin(0, 0, 0, 10px);
+                    transform: translateY(-20px);
+                    align-self: end;
+
+                    .remember{
+                        @include margin(0, 0, 0, 5px);
+                    }
+                }
+
+                .login-button{
+                    @include dimension(100px, 30px);
+                    @include color($primary-red-color, $white-color);
+                    @include font(14px, $bold);
+                    @include border(0px, solid, transparent);
+                    @include border-radius(5px, 5px, 5px, 5px);
+                    transform: translateY(-20px);
+
+                    &:hover{
+                        @include color($secondary-red-color, $white-color);
+                    }
+                }
+
+                .separate{
+                    @include display(flex, row, center, center);
+                    transform: translateY(-20px);
+
+                    div{
+                        @include dimension(80px, 1px);
+                        @include color($primary-gray-color, transparent);
+                    }
+
+                    p{
+                        @include margin(0, 0, 5px, 5px);
+                    }
+                }
+
+                .google-icon{
+                    @include dimension(30px, 30px);
+                    @include padding(2px, 2px, 2px, 2px);
+                    @include border-radius(1000px, 1000px, 1000px, 1000px);
+                    @include color($orange-color, $white-color);
+                    transform: translateY(-20px);
+
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

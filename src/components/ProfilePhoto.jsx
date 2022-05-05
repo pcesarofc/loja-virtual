@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import { React, AuthContext } from '../config/configComponents';
 import { BsPersonCircle } from '../config/configIcons';
-import { Login, Logout } from '../config/functions';
+import { Logout } from '../config/functions';
 import { Dropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ProfilePhoto = () => {
 
@@ -30,7 +31,11 @@ const ProfilePhoto = () => {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                    <Dropdown.Item onClick={Login}>Login</Dropdown.Item>
+                    <Dropdown.Item>
+                        <div>
+                            <Link to="/login">Login</Link>
+                        </div>
+                    </Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
             <p className="user-name">Usuário deslogado</p>
