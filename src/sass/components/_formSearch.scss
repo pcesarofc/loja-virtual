@@ -6,7 +6,6 @@
         @include border(0px, solid, transparent);
 
         &:focus{
-
             box-shadow: 0 0 0 0;
             outline: 0;
         }
@@ -17,5 +16,20 @@
         @include padding(0, 0, 0, 0);
         @include border(0px, solid, transparent);
         @include color($blue-color, $white-color);
+    }
+}
+
+@media screen and(max-width:980px){
+    .search-game{
+        
+        .input-search{
+            @include dimension(200px, 30px);
+        }
+    }
+}
+
+@media screen and(max-width:980px){
+    .search-game{
+        @include display(none, row, center, center);
     }
 }

@@ -1,7 +1,6 @@
-import { useContext } from 'react';
-import { React } from '../config/configComponents';
-import { AuthContext } from '../contexts/AuthContext';
+import { React, AuthContext } from '../config/configComponents';
 import { firebase, auth } from '../service/Firebase';
+import { useContext } from 'react';
 
 const Login = () => {
     const { usuario, setUsuario } = useContext(AuthContext);

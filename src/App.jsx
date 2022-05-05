@@ -1,25 +1,13 @@
-import { React, Header, Navigator, Router, Footer } from './config/configComponents';
+import { React, Header, Navigator, Router, Footer, AuthContext } from './config/configComponents';
 import { firebase, auth } from './service/Firebase';
 import { BrowserRouter } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
 import axios from 'axios';
 import './sass/app.scss';
-import { useContext, useEffect } from 'react';
-import { AuthContext } from './contexts/AuthContext';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-
-  const handleLogin = async () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    await auth.signInWithPopup(provider)
-  }
-
-  const handleVerify = () => {
-    const user = firebase.auth().currentUser;
-  }
-
-  const handleLogout = () => {
-    firebase.auth().signOut()
-  }
+  const { setUsuario } = useContext(AuthContext);
 
   const Buscar = () => {
     const user = firebase.auth().currentUser;
@@ -44,8 +32,6 @@ function App() {
     )
   }
 
-  const { usuario, setUsuario } = useContext(AuthContext);
-
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -59,7 +45,6 @@ function App() {
       }
     });
   }, []);
-
 
   return (
     <div className="app">

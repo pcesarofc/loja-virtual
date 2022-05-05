@@ -1,6 +1,4 @@
-import FormSearch from '../components/FormSearch';
-import ProfilePhoto from '../components/ProfilePhoto';
-import { React } from '../config/configComponents';
+import { React, ProfilePhoto, FormSearch } from '../config/configComponents';
 
 const Header = () => {
     return <header className="header-page">

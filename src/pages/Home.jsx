@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from '../config/configComponents';
 
 const Home = () => {
     return <main className="home-page">HOME PAGE</main>

@@ -1,21 +1,29 @@
 .navigator-page{
     @include color($secondary-gray-color, $black-color);
-    @include display(flex, row, center, center);
+    @include display(flex, row, start, center);
     
     .nav-menu{
-        @include dimension(400px, auto);
-        @include display(flex, row, space-evenly, center);
-        align-self: center;
+        @include dimension(500px, auto);
+        @include display(flex, row, space-between, center);
+        @include margin(0, 0, 100px, 0);
+        @include padding(0, 0, 0, 0);
         list-style: none;
 
         a{
-            text-decoration: none;
+            @include text(center, none);
+            @include font(24px, $bold);
+            @include color(transparent, $primary-gray-color);
+
+            &:hover{
+                @include color(transparent, $primary-red-color);
+                transform: translateY(-5px);
+            }
         }
     }
 
-    .chart{
-        @include margin(0, 0, auto, 100px);
+    .cart{
+        @include margin(0, 0, auto, 135px);
+        @include text(center, none);
         position: relative;
-        text-decoration: none;
     }
 }

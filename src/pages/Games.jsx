@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from '../config/configComponents';
 
 const Game = () => {
     return <main className="game-page">Game PAGE</main>
