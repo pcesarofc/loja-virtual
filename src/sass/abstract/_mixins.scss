@@ -1,0 +1,48 @@
+@mixin dimension ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin padding ($top, $bottom, $left, $right) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+    padding-left: $left;
+    padding-right: $right;
+}
+
+@mixin margin ($top, $bottom, $left, $right) {
+    margin-top: $top;
+    margin-bottom: $bottom;
+    margin-left: $left;
+    margin-right: $right;
+}
+
+@mixin display ($display, $direction, $justify, $align) {
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin border ($dimension, $type, $color) {
+    border: $dimension $type $color;
+}
+
+@mixin border-radius ($first, $second, $third, $fourth) {
+    border-radius: $first $second $third $fourth;
+}
+
+@mixin font ($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin color ($background, $color) {
+    background-color: $background;
+    color: $color;
+}
+
+@mixin text ($align, $decoration) {
+    text-align: $align;
+    text-decoration: $decoration;
+}

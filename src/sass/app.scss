@@ -1,34 +1,43 @@
-html, #root{
-    width: 100%;
-    height: 100%;
-}
+//ABSTRACT
+@import './abstract/mixins';
+@import './abstract/variables';
 
-body{
-    margin: 0;
-    width: 100%;
-    height: 100%;
-}
 
-.app{
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 140px 70px 1fr 200px;
-}
+//COMPONENTS
+@import './components/formSearch';
+@import './components/profilePhoto';
 
-.home-page{
-    height: 800px;
-    background-color: white;
-}
+//LAYOUT
+@import './layout/header';
+@import './layout/navigator';
+@import './layout/footer';
 
-.header-page{
-    background-color: #E21616;
-}
 
-.navigator-page{
-    background-color: #E7E7E7;
-}
+//PAGES
+@import './pages/chart';
+@import './pages/error';
+@import './pages/games';
+@import './pages/home';
+@import './pages/login';
 
-.footer-page{
-    background-color: white;
+
+html{
+
+    body{
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    
+        #root{
+            width: 100%;
+            height: 100%;
+
+            .app{
+                height: 100%;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 140px 70px 1fr 200px;
+            }
+        }
+    }
 }

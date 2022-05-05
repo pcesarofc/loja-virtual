@@ -3,6 +3,8 @@ import { firebase, auth } from './service/Firebase';
 import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
 import './sass/app.scss';
+import { useContext, useEffect } from 'react';
+import { AuthContext } from './contexts/AuthContext';
 
 function App() {
 
@@ -41,6 +43,22 @@ function App() {
       }
     )
   }
+
+  const { usuario, setUsuario } = useContext(AuthContext);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+
+        setUsuario({
+          uid: user.uid,
+          photo: user.photoURL,
+          name: user.displayName,
+          email: user.email
+        });
+      }
+    });
+  }, []);
 
 
   return (

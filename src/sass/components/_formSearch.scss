@@ -1,0 +1,21 @@
+.search-game{
+        
+    .input-search{
+        @include dimension(300px, 30px);
+        @include padding(0, 0, 10px, 0);
+        @include border(0px, solid, transparent);
+
+        &:focus{
+
+            box-shadow: 0 0 0 0;
+            outline: 0;
+        }
+    }
+
+    .button-search{
+        @include dimension(80px, 30px);
+        @include padding(0, 0, 0, 0);
+        @include border(0px, solid, transparent);
+        @include color($blue-color, $white-color);
+    }
+}

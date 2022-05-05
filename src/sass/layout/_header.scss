@@ -1,0 +1,8 @@
+.header-page{
+    @include color($primary-red-color, $white-color);
+    @include display(flex, row, space-between, center);
+
+    .title-page{
+        @include margin(0, 0, 100px, 0);
+    }
+}

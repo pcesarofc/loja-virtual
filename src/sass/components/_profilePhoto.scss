@@ -1,0 +1,4 @@
+.profile-photo{
+    @include margin(0, 0, 0, 100px);
+    @include border-radius(1000px, 1000px, 1000px, 1000px);
+}
