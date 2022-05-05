@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { React, AuthContext } from '../config/configComponents';
+import { BsPersonCircle } from '../config/configIcons';
 import { Login, Logout } from '../config/functions';
 import { Dropdown } from 'react-bootstrap';
-import { BsPersonCircle } from 'react-icons/bs';
 
 const ProfilePhoto = () => {
 

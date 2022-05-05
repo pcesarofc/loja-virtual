@@ -1,8 +1,17 @@
 .header-page{
-    @include color($primary-red-color, $white-color);
+    @include color($white-color, $primary-red-color);
     @include display(flex, row, space-between, center);
 
     .title-page{
         @include margin(0, 0, 100px, 0);
+    }
+}
+
+@media screen and(max-width:500px){
+    .header-page{
+    
+        .title-page{
+            @include margin(0, 0, 20px, 0);
+        }
     }
 }

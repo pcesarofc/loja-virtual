@@ -1,29 +1,110 @@
 .navigator-page{
-    @include color($secondary-gray-color, $black-color);
+    @include color($primary-red-color, $white-color);
     @include display(flex, row, start, center);
     
     .nav-menu{
-        @include dimension(500px, auto);
         @include display(flex, row, space-between, center);
         @include margin(0, 0, 100px, 0);
         @include padding(0, 0, 0, 0);
         list-style: none;
 
         a{
+            @include display(flex, row, center, center);
             @include text(center, none);
             @include font(24px, $bold);
-            @include color(transparent, $primary-gray-color);
+            @include color(transparent, $white-color);
+            @include margin(0, 0, 0, 100px);
 
             &:hover{
-                @include color(transparent, $primary-red-color);
+                @include color(transparent, $gold-color);
                 transform: translateY(-5px);
+            }
+
+            svg{
+                @include margin(0, 0, 0, 10px);
             }
         }
     }
 
     .cart{
         @include margin(0, 0, auto, 135px);
-        @include text(center, none);
+        @include color(transparent, $white-color);
+        @include font(24px, $bold);
         position: relative;
+
+        &:hover{
+            @include color(transparent, $gold-color);
+            transform: translateY(-5px);
+        }
+    }
+}
+
+@media screen and(max-width: 1080px){
+    .navigator-page{
+        
+        .nav-menu{
+
+            a{
+                @include margin(0, 0, 0, 50px);
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 875px){
+    .navigator-page{
+        
+        .nav-menu{
+            @include margin(0, 0, 50px, 0);
+
+            a{
+                @include margin(0, 0, 0, 50px);
+                @include font(22px, $bold);
+            }
+        }
+        .cart{
+            @include margin(0, 0, auto, 50px);
+        }
+    }
+}
+
+@media screen and(max-width: 715px){
+    .navigator-page{
+
+        .nav-menu{
+            @include margin(0, 0, 100px, 0);
+
+            a{
+                
+                li{
+                    display: none;
+                }
+            }
+        }
+
+        .cart{
+            @include margin(0, 0, auto, 50px);
+        }
+    }
+}
+
+@media screen and(max-width: 502px){
+    .navigator-page{
+
+        .nav-menu{
+            @include margin(0, 0, 30px, 0);
+        }
+    }
+}
+
+@media screen and(max-width: 435px){
+    .navigator-page{
+
+        .nav-menu{
+            
+            a{
+                @include display(none, row, center, center);
+            }
+        }
     }
 }

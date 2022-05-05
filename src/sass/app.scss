@@ -6,6 +6,7 @@
 //COMPONENTS
 @import './components/formSearch';
 @import './components/profilePhoto';
+@import './components/dropdown-nav';
 
 //LAYOUT
 @import './layout/header';
@@ -22,6 +23,8 @@
 
 
 html{
+    width: 100%;
+        height: 100%;
 
     body{
         margin: 0;
@@ -36,7 +39,7 @@ html{
                 height: 100%;
                 display: grid;
                 grid-template-columns: 1fr;
-                grid-template-rows: 140px 70px 1fr 200px;
+                grid-template-rows: 140px 70px 1fr 300px;
             }
         }
     }

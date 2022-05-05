@@ -10,9 +10,14 @@
             @include padding(0, 0, 0, 0);
             @include border(0px, solid, transparent);
             @include border-radius(1000px, 1000px, 1000px, 1000px);
-            @include color(transparent, $white-color);
+            @include color($primary-red-color, $primary-red-color);
             
-            .profile-photo, svg{
+            .profile-photo{
+                @include dimension(100%, auto);
+                @include border-radius(1000px, 1000px, 1000px, 1000px); 
+            }
+
+            svg{
                 @include dimension(100%, auto);
                 @include border-radius(1000px, 1000px, 1000px, 1000px); 
                 @include color($primary-red-color, $white-color);
@@ -23,5 +28,16 @@
     .user-name{
         @include margin(0, 0, 0, 0);
         @include font(12px, $light)
+    }
+}
+
+@media screen and(max-width:500px){
+    
+    .user-control{
+        @include margin(0, 0, 0, 20px);
+
+        .dropdown{
+            @include dimension(50px, 50px);
+        }
     }
 }

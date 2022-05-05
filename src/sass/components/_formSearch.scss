@@ -1,21 +1,33 @@
 .search-game{
+    
+    .input-text{
+        @include display(flex, row, center, center);
         
-    .input-search{
-        @include dimension(300px, 30px);
-        @include padding(0, 0, 10px, 0);
-        @include border(0px, solid, transparent);
-
-        &:focus{
-            box-shadow: 0 0 0 0;
-            outline: 0;
+        .input-search{
+            @include dimension(300px, 40px);
+            @include padding(0, 0, 10px, 0);
+            border-left: 1px solid $black-color;
+            border-bottom: 1px solid $black-color;
+            border-top: 1px solid $black-color;
+            border-right: 0px solid $black-color;
+    
+            &:focus{
+                box-shadow: 0 0 0 0;
+                outline: 0;
+            }
         }
-    }
+        
+        svg{
+            @include dimension(auto, 40px);
+            @include padding(5px, 5px, 0, 5px);
+            border-right: 1px solid $black-color;
+            border-bottom: 1px solid $black-color;
+            border-top: 1px solid $black-color;
 
-    .button-search{
-        @include dimension(80px, 30px);
-        @include padding(0, 0, 0, 0);
-        @include border(0px, solid, transparent);
-        @include color($blue-color, $white-color);
+            &:hover{
+                cursor: pointer;
+            }
+        }
     }
 }
 

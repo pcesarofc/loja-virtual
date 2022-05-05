@@ -1,9 +1,13 @@
 import { React } from '../config/configComponents';
+import { BsSearch } from '../config/configIcons';
 
 const FormSearch = () => {
+
     return <form action="" className="search-game">
-        <input type="text" name="input-search" className="input-search" placeholder='Procure um jogo' />
-        <input type="button" value="Buscar" className='button-search' />
+        <div className="input-text">
+            <input type="text" name="input-search" className="input-search" placeholder='Procure um jogo' />
+            <BsSearch />
+        </div>
     </form>
 }
 

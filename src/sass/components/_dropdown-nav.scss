@@ -1,0 +1,42 @@
+.dropdown-nav{
+    @include display(none, row, center, center);
+        
+    #dropdown-basic{
+        @include color(transparent, $white-color);
+        @include border(0px, solid, transparent);
+        @include font(24px, $light);
+        @include margin(0, 0, 30px, 0);
+       
+        &::after{
+            content: none;
+        }
+
+        &:focus{
+            box-shadow: 0px 0px 0px 0px transparent
+        }
+    }
+
+    .dropdown-menu.show{
+            
+        .dropdown-item{
+            @include padding(4px, 4px, 16px, 0);
+            
+            div{
+                @include dimension(142px, 100%);
+                
+                a{
+                    @include padding(0, 0, 0, 100px);
+                    @include color(transparent, $primary-red-color);
+                    @include text(start, none);
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 435px){
+    
+    .dropdown-nav{
+        @include display(flex, row, center, center);
+    }
+}

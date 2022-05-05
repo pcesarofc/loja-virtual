@@ -1,0 +1,4 @@
+.footer-page{
+    @include color($primary-red-color, $white-color);
+    @include display(flex, row, space-evenly, start)
+}
