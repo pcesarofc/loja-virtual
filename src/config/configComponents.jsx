@@ -15,6 +15,7 @@ import DropdownNav from '../components/DropdownNav';
 import MenuGames from '../components/MenuGames';
 import Game from '../components/Game';
 import ModalGame from '../components/ModalGame';
+import Filtro from '../components/Filtro';
 
 
 export {
@@ -34,5 +35,6 @@ export {
     DropdownNav,
     MenuGames,
     Game,
-    ModalGame
+    ModalGame,
+    Filtro
 };

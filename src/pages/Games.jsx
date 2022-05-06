@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { React, MenuGames, Game } from '../config/configComponents';
+import { React, MenuGames, Game, Filtro } from '../config/configComponents';
 import axios from 'axios';
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from '../config/configIcons';
 
@@ -80,7 +80,7 @@ const Games = () => {
     return (quantity < 30)
         ? <main className="game-page">
             <article className="game-article">
-                <aside className="filtros">Filtro</aside>
+                <Filtro games={games} setGames={setGames} quantity={quantity} />
                 <MenuGames />
                 <section className="section-games">
                     {games.map((games) => (<Game games={games} />))}
@@ -91,7 +91,7 @@ const Games = () => {
 
         : <main className="game-page">
             <article className="game-article">
-                <aside className="filtros">Filtro</aside>
+                <Filtro games={games} setGames={setGames} />
                 <MenuGames />
                 <section className="section-games">
                     {games.map((games) => (<Game games={games} />))}

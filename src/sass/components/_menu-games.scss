@@ -18,3 +18,16 @@
         }
     }
 }
+
+@media screen and(max-width:620px){
+    .menu-games{
+        @include dimension(80%, auto);
+        @include margin(0, 0, 0, 0);
+        @include display(flex, column, center, center);
+        border-bottom: 0px solid $primary-gray-color;
+
+        .grid-list{
+            display: none;
+        }
+    }
+}

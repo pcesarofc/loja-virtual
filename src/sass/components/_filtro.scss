@@ -1,0 +1,47 @@
+.filtros{
+    @include dimension(250px, 400px);
+    @include margin(0, 0, 20px, 5px);
+    @include border(1px, solid, $primary-gray-color);
+    @include padding(25px, 0, 25px, 25px);
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    h2.categories{
+        @include color(transparent, $blue-color);
+        @include font(24px, $bold);
+    }
+
+    .zelda, .mario, .monster-hunter, .pokemon{
+        @include display(flex, row, start, start);
+
+        input{
+            @include dimension(20px, 20px);
+            @include margin(0, 10px, 0, 5px);
+        }
+
+        label{
+            @include dimension(auto, 20px);
+        }
+    }
+
+    .button-filter-categories{
+        @include dimension(100px, auto);
+        @include margin(10px, 0, 0, 0);
+        @include border(0px, solid, transparent);
+        @include border-radius(2px, 2px, 2px, 2px);
+        @include color($blue-color, $white-color);
+        @include font(18px, $bold);
+
+        &:hover{
+            @include color($gold-color, $white-color);
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and(max-width:620px){
+    .filtros{
+        @include dimension(250px, 300px);
+        @include margin(0, 20px, 0, 0);
+    }
+}
