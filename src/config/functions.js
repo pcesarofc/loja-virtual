@@ -82,4 +82,20 @@ const retractGames = ({setQuantity, setGames, games}) => {
     setQuantity(8);
 }
 
-export { Login, Logout, loadAxios, expandGames, retractGames };
+const addToCart = ({games}) => {
+    const user = firebase.auth().currentUser;
+
+        if (user) {
+            axios.post('https://loja-virtualpc-default-rtdb.firebaseio.com/clientes/' + user.uid + "/chart.json",
+                {
+                    "game": games.game,
+                    "price": parseFloat(games.newprice.replace(",", ".").replace("R$", "")),
+                    "img": games.img
+                }
+            )
+        } else {
+            window.alert('Você precisa estar logado!')
+        }
+}
+
+export { Login, Logout, loadAxios, expandGames, retractGames, addToCart };

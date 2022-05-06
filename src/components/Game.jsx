@@ -1,27 +1,13 @@
 import { React, ModalGame } from '../config/configComponents';
 import { FaShoppingCart } from '../config/configIcons';
-import { firebase } from '../service/Firebase';
-import axios from 'axios';
+import { addToCart } from '../config/functions';
 import { useState } from 'react';
 
 const Game = ({ games }) => {
 
     const [lgShow, setLgShow] = useState(false);
 
-    function Add() {
-        const user = firebase.auth().currentUser;
-
-        if (user) {
-            axios.post('https://loja-virtualpc-default-rtdb.firebaseio.com/clientes/' + user.uid + "/chart.json",
-                {
-                    "game": games.game,
-                    "price": games.price
-                }
-            )
-        } else {
-            window.alert('usuário deslogado')
-        }
-    }
+    const Add = () => { addToCart({ games }) }
 
     return <div className="game">
         <img src={games.img} alt="game-photo" />

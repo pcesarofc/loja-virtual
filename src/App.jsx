@@ -9,33 +9,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const { setUsuario } = useContext(AuthContext);
 
-  const Buscar = () => {
-    const user = firebase.auth().currentUser;
-    const url = 'https://loja-virtualpc-default-rtdb.firebaseio.com/clientes/' + user.uid + "/chart.json"
-
-    if (user != null) {
-      axios.get(url).then(response => {
-        console.log(response.data)
-      })
-    } else {
-      console.log('Não existe usuário logado!')
-    }
-  }
-
-  const Inserir = () => {
-    const user = firebase.auth().currentUser;
-
-    axios.post('https://loja-virtualpc-default-rtdb.firebaseio.com/clientes/' + user.uid + "/chart.json",
-      {
-        "products": "casaco"
-      }
-    )
-  }
-
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-
         setUsuario({
           uid: user.uid,
           photo: user.photoURL,
