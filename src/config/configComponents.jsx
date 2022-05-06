@@ -13,6 +13,7 @@ import ProfilePhoto from '../components/ProfilePhoto';
 import FormSearch from '../components/FormSearch';
 import DropdownNav from '../components/DropdownNav';
 import MenuGames from '../components/MenuGames';
+import Game from '../components/Game';
 
 
 export {
@@ -30,5 +31,6 @@ export {
     ProfilePhoto,
     FormSearch,
     DropdownNav,
-    MenuGames
+    MenuGames,
+    Game
 };
