@@ -1,7 +1,10 @@
 import { React } from '../config/configComponents';
+import { addToCart } from '../config/functions';
 import { Modal } from 'react-bootstrap';
 
 const ModalGame = ({ games, setLgShow, lgShow }) => {
+
+    const addCart = () => { addToCart({ games }) }
 
     return <Modal
         size="lg"
@@ -36,9 +39,11 @@ const ModalGame = ({ games, setLgShow, lgShow }) => {
                     with desktop publishing software like
                     Aldus PageMaker including versions
                     of Lorem Ipsum.</p>
-                <div className="prices"><h3><b>{games.newprice}</b> à vista</h3>
-                    <h3>ou em <b>12x</b> sem juros</h3></div>
-                <input type="button" value="Adicionar ao carrinho" />
+                <div className="prices">
+                    <h3><b>{games.newprice}</b> à vista</h3>
+                    <h3>ou em <b>12x</b> sem juros</h3>
+                </div>
+                <input type="button" className='button-cart' value="Adicionar ao carrinho" onClick={addCart} />
             </div>
         </Modal.Body>
     </Modal>

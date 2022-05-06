@@ -27,6 +27,90 @@
                     }
                 }
             }
+
+            .button-cart{
+                @include dimension(auto, 40px);
+                @include color($blue-color, $white-color);
+                @include border(0px, solid, transparent);
+                @include border-radius(2px, 2px, 2px, 2px);
+                transform: translateY(20px);
+
+                &:hover{
+                    @include color($gold-color, $white-color);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 992px){
+    
+    .modal-content{
+
+        .modal-body{
+            
+            img{
+                @include dimension(auto, 370px);
+            }
+
+            p{
+                @include font(10px, $light);
+            }
+
+            .infos-game{
+                
+                h2{
+                    @include font(22px, $bold);
+                }
+    
+                .prices{
+                    
+                    h3{
+                        @include font(14px, $bold);
+                    }
+                }
+    
+                .button-cart{
+                    transform: translateY(0px);
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 480px){
+    
+    .modal-content{
+
+        .modal-body{
+
+            img{
+                @include dimension(auto, 220px);
+            }
+
+            p{
+                @include font(10px, $light);
+            }
+            
+            .infos-game{
+                
+                h2{
+                    @include font(22px, $bold);
+                }
+    
+                .prices{
+                    
+                    h3{
+                        @include font(14px, $bold);
+                    }
+                }
+    
+                .button-cart{
+                    @include dimension(auto, 30px);
+                    @include font(12px, 500);
+                }
+            }
         }
     }
 }

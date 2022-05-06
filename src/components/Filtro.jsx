@@ -1,113 +1,79 @@
+import { loadAxios, filterGames } from '../config/functions';
 import { React } from '../config/configComponents';
-import axios from 'axios';
-import { useState } from 'react';
 
-const Filtro = ({ setGames }) => {
+const Filtro = ({ setGames, quantity, filtro, setFiltro, setShowMore }) => {
 
-    const [filtro, setFiltro] = useState('');
+    const url = 'https://loja-virtualpc-default-rtdb.firebaseio.com/jogos.json';
+    var mario = document.getElementsByName('mario');
+    var zelda = document.getElementsByName('zelda');
+    var pokemon = document.getElementsByName('pokemon');
+    var monsterhunter = document.getElementsByName('monster-hunter');
 
     function Filtrar() {
         if (filtro != '') {
-            const url = 'https://loja-virtualpc-default-rtdb.firebaseio.com/jogos.json'
-
-            axios.get(url + '?orderBy="franquia"&equalTo="' + filtro + '"').then(response => {
-                var i;
-                var newgames = []
-
-                for (i in response.data) {
-                    if (response.data[i].newprice === "") {
-                        newgames = [...newgames, {
-                            game: response.data[i].game,
-                            newprice: "R$" + response.data[i].oldprice.toFixed(2).toString().replace(".", ","),
-                            oldprice: " ",
-                            img: response.data[i].img,
-                            franquia: response.data[i].franquia
-                        }]
-                    } else {
-                        newgames = [...newgames, {
-                            game: response.data[i].game,
-                            newprice: "R$" + response.data[i].newprice.toFixed(2).toString().replace(".", ","),
-                            oldprice: "R$" + response.data[i].oldprice.toFixed(2).toString().replace(".", ","),
-                            img: response.data[i].img,
-                            franquia: response.data[i].franquia
-                        }]
-                    }
-                }
-                setGames(newgames)
-            })
+            filterGames({ setGames, filtro, url })
+            setShowMore(false)
+        } else {
+            loadAxios({ setGames, quantity, url })
+            setShowMore(true)
         }
     }
 
-    function checked1() {
-        var mario = document.getElementsByName('mario');
-        var zelda = document.getElementsByName('zelda');
-        var pokemon = document.getElementsByName('pokemon');
-        var monsterhunter = document.getElementsByName('monster-hunter');
-
+    function marioFilter() {
         if (mario[0].checked) {
             zelda[0].checked = false;
             pokemon[0].checked = false;
             monsterhunter[0].checked = false;
             setFiltro('Mario')
-        }
+        } else setFiltro('')
     }
-    function checked2() {
-        var mario = document.getElementsByName('mario');
-        var zelda = document.getElementsByName('zelda');
-        var pokemon = document.getElementsByName('pokemon');
-        var monsterhunter = document.getElementsByName('monster-hunter');
+
+    function pokemonFilter() {
 
         if (pokemon[0].checked) {
             mario[0].checked = false;
             zelda[0].checked = false;
             monsterhunter[0].checked = false;
             setFiltro('Pokémon')
-        }
+        } else setFiltro('')
     }
-    function checked3() {
-        var mario = document.getElementsByName('mario');
-        var zelda = document.getElementsByName('zelda');
-        var pokemon = document.getElementsByName('pokemon');
-        var monsterhunter = document.getElementsByName('monster-hunter');
+
+    function zeldaFilter() {
 
         if (zelda[0].checked) {
             pokemon[0].checked = false;
             mario[0].checked = false;
             monsterhunter[0].checked = false;
             setFiltro('Zelda')
-        }
+        } else setFiltro('')
     }
-    function checked4() {
-        var mario = document.getElementsByName('mario');
-        var zelda = document.getElementsByName('zelda');
-        var pokemon = document.getElementsByName('pokemon');
-        var monsterhunter = document.getElementsByName('monster-hunter');
+
+    function monsterHunterFilter() {
 
         if (monsterhunter[0].checked) {
             zelda[0].checked = false;
             pokemon[0].checked = false;
             mario[0].checked = false;
             setFiltro('Monster Hunter')
-        }
+        } else setFiltro('')
     }
-
 
     return <aside className="filtros">
         <h2 className="categories">Franquias</h2>
         <div className="mario">
-            <input type="checkbox" name="mario" className="mario-checkbox" onClick={checked1} value='1' />
+            <input type="checkbox" name="mario" className="mario-checkbox" onChange={marioFilter} />
             <label className='mario-label'>Mario</label>
         </div>
         <div className="pokemon">
-            <input type="checkbox" name="pokemon" className="pokemon-checkbox" onClick={checked2} value='2' />
+            <input type="checkbox" name="pokemon" className="pokemon-checkbox" onClick={pokemonFilter} />
             <label className='pokemon-label'>Pokémon</label>
         </div>
         <div className="zelda">
-            <input type="checkbox" name="zelda" className="zelda-checkbox" onClick={checked3} value='3' />
+            <input type="checkbox" name="zelda" className="zelda-checkbox" onClick={zeldaFilter} />
             <label className='zelda-label'>Zelda</label>
         </div>
         <div className="monster-hunter">
-            <input type="checkbox" name="monster-hunter" className="monster-hunter-checkbox" onClick={checked4} value='4' />
+            <input type="checkbox" name="monster-hunter" className="monster-hunter-checkbox" onClick={monsterHunterFilter} />
             <label className='monster-hunter-label'>Monster Hunter</label>
         </div>
         <input type="button" value="Filtrar" className='button-filter-categories' onClick={Filtrar} />

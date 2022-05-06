@@ -98,4 +98,32 @@ const addToCart = ({games}) => {
         }
 }
 
-export { Login, Logout, loadAxios, expandGames, retractGames, addToCart };
+const filterGames = ({setGames, filtro, url}) => {
+    axios.get(url + '?orderBy="franquia"&equalTo="' + filtro + '"').then(response => {
+        var i;
+        var newgames = []
+
+        for (i in response.data) {
+            if (response.data[i].newprice === "") {
+                newgames = [...newgames, {
+                    game: response.data[i].game,
+                    newprice: "R$" + response.data[i].oldprice.toFixed(2).toString().replace(".", ","),
+                    oldprice: " ",
+                    img: response.data[i].img,
+                    franquia: response.data[i].franquia
+                }]
+            } else {
+                newgames = [...newgames, {
+                    game: response.data[i].game,
+                    newprice: "R$" + response.data[i].newprice.toFixed(2).toString().replace(".", ","),
+                    oldprice: "R$" + response.data[i].oldprice.toFixed(2).toString().replace(".", ","),
+                    img: response.data[i].img,
+                    franquia: response.data[i].franquia
+                }]
+            }
+        }
+        setGames(newgames)
+    })
+}
+
+export { Login, Logout, loadAxios, expandGames, retractGames, addToCart, filterGames };
