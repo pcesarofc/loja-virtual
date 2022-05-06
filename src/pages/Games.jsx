@@ -1,104 +1,42 @@
 import { useEffect, useState } from 'react';
 import { React, MenuGames, Game, Filtro } from '../config/configComponents';
-import axios from 'axios';
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from '../config/configIcons';
+import { loadAxios, expandGames, retractGames } from '../config/functions';
 
 const Games = () => {
 
     const [games, setGames] = useState([]);
     const [quantity, setQuantity] = useState(8);
 
-    useEffect(() => {
-        axios.get('https://loja-virtualpc-default-rtdb.firebaseio.com/jogos.json').then(response => {
-            response.data.length = quantity;
-            var i;
-            var newgames = []
+    const url = 'https://loja-virtualpc-default-rtdb.firebaseio.com/jogos.json';
 
-            for (i in response.data) {
-                if (response.data[i].newprice === "") {
-                    newgames = [...newgames, {
-                        game: response.data[i].game,
-                        newprice: "R$" + response.data[i].oldprice.toFixed(2).toString().replace(".", ","),
-                        oldprice: " ",
-                        img: response.data[i].img,
-                        franquia: response.data[i].franquia
-                    }]
-                } else {
-                    newgames = [...newgames, {
-                        game: response.data[i].game,
-                        newprice: "R$" + response.data[i].newprice.toFixed(2).toString().replace(".", ","),
-                        oldprice: "R$" + response.data[i].oldprice.toFixed(2).toString().replace(".", ","),
-                        img: response.data[i].img,
-                        franquia: response.data[i].franquia
-                    }]
-                }
-            }
-            setGames(newgames)
-        })
-    }, [])
+    const verMais = () => { expandGames({ quantity, setGames, setQuantity, url }) };
+    const verMenos = () => { retractGames({ setQuantity, setGames, games }) };
 
-    function verMAis() {
-        var quantityupdated = quantity + 8;
-        axios.get('https://loja-virtualpc-default-rtdb.firebaseio.com/jogos.json').then(response => {
-            response.data.length = quantityupdated;
-            var i;
-            var newgames = []
-
-            for (i in response.data) {
-                if (response.data[i].newprice === "") {
-                    newgames = [...newgames, {
-                        game: response.data[i].game,
-                        newprice: "R$" + response.data[i].oldprice.toFixed(2).toString().replace(".", ","),
-                        oldprice: " ",
-                        img: response.data[i].img,
-                        franquia: response.data[i].franquia
-                    }]
-                } else {
-                    newgames = [...newgames, {
-                        game: response.data[i].game,
-                        newprice: "R$" + response.data[i].newprice.toFixed(2).toString().replace(".", ","),
-                        oldprice: "R$" + response.data[i].oldprice.toFixed(2).toString().replace(".", ","),
-                        img: response.data[i].img,
-                        franquia: response.data[i].franquia
-                    }]
-                }
-            }
-            setGames(newgames);
-            setQuantity(quantityupdated);
-        })
-    }
-
-    function esconder() {
-        var quantityupdated = 8;
-        var gamesupdated = [];
-        gamesupdated = games;
-        gamesupdated.length = quantityupdated;
-        setGames(gamesupdated);
-        setQuantity(quantityupdated);
-    }
+    useEffect(() => { loadAxios({ quantity, setGames, url }) }, [])
 
     return (quantity < 30)
         ? <main className="game-page">
             <article className="game-article">
-                <Filtro games={games} setGames={setGames} quantity={quantity} />
+                <Filtro setGames={setGames} />
                 <MenuGames />
                 <section className="section-games">
-                    {games.map((games) => (<Game games={games} />))}
+                    <div className='test'>{games.map((games) => (<Game games={games} />))}</div>
+                    <AiOutlinePlusCircle onClick={verMais} className="button-view" />
                 </section>
-                <AiOutlinePlusCircle onClick={verMAis} className="button-view" />
             </article>
         </main>
 
         : <main className="game-page">
             <article className="game-article">
-                <Filtro games={games} setGames={setGames} />
+                <Filtro setGames={setGames} />
                 <MenuGames />
                 <section className="section-games">
-                    {games.map((games) => (<Game games={games} />))}
+                    <div className='test'>{games.map((games) => (<Game games={games} />))}</div>
+                    <AiOutlineMinusCircle onClick={verMenos} className="button-view" />
                 </section>
-                <AiOutlineMinusCircle onClick={esconder} className="button-view" />
             </article>
-        </main>
+        </main >
 }
 
 export default Games;
