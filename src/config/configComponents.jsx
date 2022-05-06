@@ -12,6 +12,7 @@ import { AuthContext } from '../contexts/AuthContext';
 import ProfilePhoto from '../components/ProfilePhoto';
 import FormSearch from '../components/FormSearch';
 import DropdownNav from '../components/DropdownNav';
+import MenuGames from '../components/MenuGames';
 
 
 export {
@@ -28,5 +29,6 @@ export {
     AuthContext,
     ProfilePhoto,
     FormSearch,
-    DropdownNav
+    DropdownNav,
+    MenuGames
 };

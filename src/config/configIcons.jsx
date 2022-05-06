@@ -1,10 +1,9 @@
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaShoppingCart, FaListUl } from 'react-icons/fa';
 import { BiHome } from 'react-icons/bi';
 import { SiNintendoswitch } from 'react-icons/si';
 import { MdLogin } from 'react-icons/md';
 import { RiContactsFill } from 'react-icons/ri';
-import { BsSearch } from 'react-icons/bs';
-import { BsPersonCircle, BsGoogle } from 'react-icons/bs';
+import { BsSearch, BsFillGrid3X3GapFill, BsPersonCircle, BsGoogle } from 'react-icons/bs';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { FiSend } from 'react-icons/fi';
 
@@ -19,5 +18,7 @@ export {
     BsPersonCircle,
     AiOutlineMenu,
     FiSend,
-    BsGoogle
+    BsGoogle,
+    BsFillGrid3X3GapFill,
+    FaListUl
 }
