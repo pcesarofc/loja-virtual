@@ -1,9 +1,12 @@
-import { React } from '../config/configComponents';
+import { React, ModalGame } from '../config/configComponents';
 import { FaShoppingCart } from '../config/configIcons';
-import { firebase, auth } from '../service/Firebase';
+import { firebase } from '../service/Firebase';
 import axios from 'axios';
+import { useState } from 'react';
 
 const Game = ({ games }) => {
+
+    const [lgShow, setLgShow] = useState(false);
 
     function Add() {
         const user = firebase.auth().currentUser;
@@ -21,15 +24,17 @@ const Game = ({ games }) => {
     }
 
     return <div className="game">
-        <div className="img">IMAGE</div>
+        <img src={games.img} alt="game-photo" />
         <h3 className="title">{games.game}</h3>
-        <p className="new-price">R$300,00</p>
-        <p className="old-price">R$300,00</p>
+        <p className="new-price">{games.newprice}</p>
+        <p className="old-price">{games.oldprice}</p>
 
         <div className="buttons-game">
-            <input type="button" value="Detalhes" />
+            <input type="button" value="Detalhes" onClick={() => setLgShow(true)} />
             <FaShoppingCart onClick={Add} />
         </div>
+        <ModalGame setLgShow={setLgShow} games={games} lgShow={lgShow} />
+
     </div>
 }
 

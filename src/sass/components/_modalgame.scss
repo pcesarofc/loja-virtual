@@ -1,0 +1,32 @@
+.modal-content{
+
+    .modal-body{
+        @include display(flex, row, space-around, start);
+
+        img{
+            @include dimension(auto, 470px);
+        }
+
+        .infos-game{
+            @include margin(0, 0, 30px, 0);
+            @include display(flex, column, space-between, center);
+
+            
+            h2{
+                @include font(24px, $bold);
+                align-self: start;
+            }
+
+            .prices{
+                @include display(flex, column, space-between, center);
+
+
+                h3{
+                    b{
+                        @include color(transparent, $primary-red-color);
+                    }
+                }
+            }
+        }
+    }
+}

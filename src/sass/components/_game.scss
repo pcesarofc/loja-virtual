@@ -1,28 +1,36 @@
 .game{
     @include dimension(200px, 400px);
-    @include border(1px, solid, $black-color);
     @include display(flex, column, start, center);
-    @include margin(20px, 0, 0, 0);
+    @include margin(30px, 0, 0, 0);
+    @include border-radius(5px, 5px, 5px, 5px);
 
-    .img{
-        @include dimension(auto, 200px);
+    &:hover{
+        box-shadow: 0px 12px 13px 4px rgba(0,0,0,0.21);
+    }
+
+    img{
+        @include dimension(auto, 250px);
         background-color: red;
     }
 
     .title{
         @include dimension(auto, 90px);
-        @include font(18px, $bold);
-        @include color(transparent, $primary-red-color);
+        @include font(16px, $bold);
+        @include color(transparent, $black-color);
         @include text(center, none);
         @include margin(0, 0, 0, 0);
+        @include padding(0, 0, 10px, 10px);
     }
 
     .new-price{
-        @include font(18px, $bold);
+        @include font(18px, $extra-bold);
+        @include color(transparent, $primary-red-color);
     }
 
     .old-price{
-        @include font(14px, $light);
+        @include font(16px, $light);
+        @include dimension(auto, 21px);
+        @include color(transparent, $primary-gray-color);
         transform: translateY(-10px);
         text-decoration: line-through;
     }
@@ -35,6 +43,9 @@
             @include border(0px, solid, transparent);
             @include color($blue-color, $white-color);
             @include margin(0, 0, 0, 20px);
+            @include padding(2px, 2px, 5px, 5px);
+            @include border-radius(2px, 2px, 2px, 2px);
+            @include font(auto, $bold);
 
             &:hover{
                 @include color($gold-color, $white-color);

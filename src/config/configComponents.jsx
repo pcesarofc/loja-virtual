@@ -14,6 +14,7 @@ import FormSearch from '../components/FormSearch';
 import DropdownNav from '../components/DropdownNav';
 import MenuGames from '../components/MenuGames';
 import Game from '../components/Game';
+import ModalGame from '../components/ModalGame';
 
 
 export {
@@ -32,5 +33,6 @@ export {
     FormSearch,
     DropdownNav,
     MenuGames,
-    Game
+    Game,
+    ModalGame
 };

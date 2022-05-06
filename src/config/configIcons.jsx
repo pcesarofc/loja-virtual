@@ -4,7 +4,7 @@ import { SiNintendoswitch } from 'react-icons/si';
 import { MdLogin } from 'react-icons/md';
 import { RiContactsFill } from 'react-icons/ri';
 import { BsSearch, BsFillGrid3X3GapFill, BsPersonCircle, BsGoogle } from 'react-icons/bs';
-import { AiOutlineMenu } from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai';
 import { FiSend } from 'react-icons/fi';
 
 
@@ -20,5 +20,7 @@ export {
     FiSend,
     BsGoogle,
     BsFillGrid3X3GapFill,
-    FaListUl
+    FaListUl,
+    AiOutlinePlusCircle,
+    AiOutlineMinusCircle
 }
