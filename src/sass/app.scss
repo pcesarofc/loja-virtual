@@ -12,6 +12,7 @@
 @import './components/modalgame';
 @import './components/filtro';
 @import './components/loginForm';
+@import './components/cartGame';
 
 //LAYOUT
 @import './layout/header';
@@ -20,7 +21,7 @@
 
 
 //PAGES
-@import './pages/chart';
+@import './pages/cartPage';
 @import './pages/error';
 @import './pages/games';
 @import './pages/home';

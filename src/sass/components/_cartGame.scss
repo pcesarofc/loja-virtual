@@ -1,0 +1,33 @@
+.product-cart{
+    @include dimension(100%, auto);
+    @include display(flex, row, start, start);
+    @include margin(0, 20px, 0, 0);
+
+    img{
+        @include dimension(auto, 100px);
+    }
+
+    .infos-game-cart{
+        @include display(flex, column, space-between, start);
+        @include dimension(auto, 100px);
+        @include margin(0, 0, 10px, 0);
+
+        h3{
+            @include font(16px, $bold);
+        }
+
+        .price-game-cart{
+            @include color(transparent, $primary-red-color);
+        }
+
+        svg{
+            @include dimension(30px, auto);
+            @include color(transparent, $primary-red-color);
+
+            &:hover{
+                @include color(transparent, $secondary-red-color);
+                cursor: pointer;
+            }
+        }
+    }
+}

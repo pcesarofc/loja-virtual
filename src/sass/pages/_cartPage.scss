@@ -1,0 +1,116 @@
+.cart-page{
+
+    article{
+
+        .cart-section{
+
+            @include display(flex, row, space-around, start);
+            @include margin(30px, 20px, 0, 0);
+
+            .products-cart{
+
+                h4{
+                    @include font(30px, $bold);
+                    @include margin(0, 30px, 0, 0);
+                    @include color(transparent, $blue-color);
+                    border-bottom: 1px solid $primary-gray-color;
+                }
+            }
+
+            .buy{
+                @include dimension(auto, 200px);
+                @include margin(30px, 0, 0, 0);
+                @include display(flex, column, space-between, start);
+
+                .discount{
+
+                    label{
+                        @include font(16px, $light);
+                        @include color(transparent, $primary-red-color);
+                        @include margin(0, 0, 0, 5px);
+                    }
+
+                    .cupom{
+                        @include dimension(150px, 40px);
+                        @include border(1px, solid, $primary-gray-color);
+                        @include border-radius(5px, 5px, 5px, 5px);
+
+                        &:focus{
+                            box-shadow: 0 0 0 0;
+                            outline: 0;
+                        }
+                    }
+
+                    .button-cupom{
+                        @include color($blue-color, $white-color);
+                        @include dimension(auto, 40px);
+                        @include font(18px, $bold);
+                        @include border(1px, solid, $primary-gray-color);
+                        @include border-radius(5px, 5px, 5px, 5px);
+
+                        &:hover{
+                            @include color($gold-color, $white-color);
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                h4{
+                    @include font(30px, $bold);
+                    @include color(transparent, $blue-color);
+
+                    b{
+                        @include color(transparent, $primary-red-color);
+                    }
+                }
+
+                .button-buy{
+                    @include color($blue-color, $white-color);
+                    @include dimension(auto, 40px);
+                    @include font(18px, $bold);
+                    @include border(1px, solid, $primary-gray-color);
+                    @include border-radius(5px, 5px, 5px, 5px);
+    
+                    &:hover{
+                        @include color($gold-color, $white-color);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:880px){
+    .cart-page{
+
+        article{
+    
+            .cart-section{
+                @include display(flex, column, space-around, center);
+            }
+        }
+    }
+}
+
+@media screen and(max-width:480px){
+    .cart-page{
+
+        article{
+    
+            .cart-section{
+    
+                .buy{
+                    @include display(flex, column, space-between, center);
+    
+                    .discount{
+    
+                        label{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
