@@ -1,8 +1,7 @@
 import { React, Header, Navigator, Router, Footer, AuthContext } from './config/configComponents';
-import { firebase, auth } from './service/Firebase';
+import { auth } from './service/Firebase';
 import { BrowserRouter } from 'react-router-dom';
 import { useContext, useEffect } from 'react';
-import axios from 'axios';
 import './sass/app.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

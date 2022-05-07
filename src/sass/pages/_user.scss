@@ -1,0 +1,56 @@
+.user-page{
+    @include dimension(auto, 500px);
+    @include display(flex, row, center, center);
+
+    article{
+
+        .user-section{
+            @include margin (0, 30px, 0, 0);
+            @include display(flex, row, center, start);
+
+            .user-photo-email{
+                @include display(flex, column, center, center);
+                @include margin(0, 0, 0, 50px);
+
+                img{
+                    @include dimension(200px, auto);
+                    @include border-radius(1000px, 1000px, 1000px, 1000px);
+                    @include border(5px, solid, $gold-color);
+                    @include margin(0, 20px, 0, 0);
+                }
+
+                p{
+                    @include font(18px, $light);
+                }
+            }
+        }
+
+        .actions{
+            @include dimension(auto, 150px);
+            @include display(flex, column, space-between, center);
+
+            h3{
+                @include font(30px, $bold);
+
+                b{
+                    @include color(transparent, $blue-color);
+                }
+            }
+
+            .icons{
+                @include dimension(100%, auto);
+                @include display(flex, row, space-evenly, center);
+
+                svg{
+                    @include dimension(40px, auto);
+                    @include color(transparent, $blue-color);
+
+                    &:hover{
+                        @include color(transparent, $gold-color);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

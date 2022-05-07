@@ -1,8 +1,8 @@
-.login-page{
+.register-page{
 
     article{
 
-        .section-login{
+        .section-register{
             @include display(flex, row, center, center);
         }
     }

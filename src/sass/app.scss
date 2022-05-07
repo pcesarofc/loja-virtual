@@ -11,6 +11,7 @@
 @import './components/game';
 @import './components/modalgame';
 @import './components/filtro';
+@import './components/loginForm';
 
 //LAYOUT
 @import './layout/header';
@@ -24,6 +25,8 @@
 @import './pages/games';
 @import './pages/home';
 @import './pages/login';
+@import './pages/register';
+@import './pages/user';
 
 
 html{

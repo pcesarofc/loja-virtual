@@ -1,6 +1,5 @@
 import { firebase, auth } from '../service/Firebase';
 import axios from 'axios';
-import $ from 'jquery';
 
 
 const Logout = ({setUsuario}) => {

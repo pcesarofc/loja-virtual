@@ -5,6 +5,7 @@ import Footer from '../layout/Footer';
 import Home from '../pages/Home';
 import Router from './Router';
 import LoginPage from '../pages/LoginPage';
+import RegisterPage from '../pages/RegisterPage';
 import Contact from '../pages/Contact';
 import Games from '../pages/Games';
 import Cart from '../pages/Cart';
@@ -16,6 +17,9 @@ import MenuGames from '../components/MenuGames';
 import Game from '../components/Game';
 import ModalGame from '../components/ModalGame';
 import Filtro from '../components/Filtro';
+import LoginForm from '../components/LoginForm';
+import RegisterForm from '../components/RegisterForm';
+import UserPage from '../pages/UserPage';
 
 
 export {
@@ -36,5 +40,9 @@ export {
     MenuGames,
     Game,
     ModalGame,
-    Filtro
+    Filtro,
+    LoginForm,
+    RegisterForm,
+    RegisterPage,
+    UserPage
 };
