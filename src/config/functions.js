@@ -126,4 +126,55 @@ const filterGames = ({setGames, filtro, url}) => {
     })
 }
 
-export { Login, Logout, loadAxios, expandGames, retractGames, addToCart, filterGames };
+function marioFilter({setFiltro, mario, zelda, pokemon, monsterhunter}) {
+    if (mario[0].checked) {
+        zelda[0].checked = false;
+        pokemon[0].checked = false;
+        monsterhunter[0].checked = false;
+        setFiltro('Mario')
+    } else setFiltro('')
+}
+
+function pokemonFilter({setFiltro, mario, zelda, pokemon, monsterhunter}) {
+
+    if (pokemon[0].checked) {
+        mario[0].checked = false;
+        zelda[0].checked = false;
+        monsterhunter[0].checked = false;
+        setFiltro('Pokémon')
+    } else setFiltro('')
+}
+
+function zeldaFilter({setFiltro, mario, zelda, pokemon, monsterhunter}) {
+
+    if (zelda[0].checked) {
+        pokemon[0].checked = false;
+        mario[0].checked = false;
+        monsterhunter[0].checked = false;
+        setFiltro('Zelda')
+    } else setFiltro('')
+}
+
+function monsterHunterFilter({setFiltro, mario, zelda, pokemon, monsterhunter}) {
+
+    if (monsterhunter[0].checked) {
+        zelda[0].checked = false;
+        pokemon[0].checked = false;
+        mario[0].checked = false;
+        setFiltro('Monster Hunter')
+    } else setFiltro('')
+}
+
+export {
+    Login,
+    Logout,
+    loadAxios,
+    expandGames,
+    retractGames,
+    addToCart,
+    filterGames,
+    marioFilter,
+    pokemonFilter,
+    zeldaFilter,
+    monsterHunterFilter
+};

@@ -1,4 +1,4 @@
-import { loadAxios, filterGames } from '../config/functions';
+import { loadAxios, filterGames, marioFilter, pokemonFilter, zeldaFilter, monsterHunterFilter } from '../config/functions';
 import { React } from '../config/configComponents';
 
 const Filtro = ({ setGames, quantity, filtro, setFiltro, setShowMore }) => {
@@ -19,61 +19,27 @@ const Filtro = ({ setGames, quantity, filtro, setFiltro, setShowMore }) => {
         }
     }
 
-    function marioFilter() {
-        if (mario[0].checked) {
-            zelda[0].checked = false;
-            pokemon[0].checked = false;
-            monsterhunter[0].checked = false;
-            setFiltro('Mario')
-        } else setFiltro('')
-    }
-
-    function pokemonFilter() {
-
-        if (pokemon[0].checked) {
-            mario[0].checked = false;
-            zelda[0].checked = false;
-            monsterhunter[0].checked = false;
-            setFiltro('Pokémon')
-        } else setFiltro('')
-    }
-
-    function zeldaFilter() {
-
-        if (zelda[0].checked) {
-            pokemon[0].checked = false;
-            mario[0].checked = false;
-            monsterhunter[0].checked = false;
-            setFiltro('Zelda')
-        } else setFiltro('')
-    }
-
-    function monsterHunterFilter() {
-
-        if (monsterhunter[0].checked) {
-            zelda[0].checked = false;
-            pokemon[0].checked = false;
-            mario[0].checked = false;
-            setFiltro('Monster Hunter')
-        } else setFiltro('')
-    }
+    const handleMarioFilter = () => { marioFilter({ setFiltro, mario, zelda, pokemon, monsterhunter }) }
+    const handlePokemonFilter = () => { pokemonFilter({ setFiltro, mario, zelda, pokemon, monsterhunter }) }
+    const handleZeldaFilter = () => { zeldaFilter({ setFiltro, mario, zelda, pokemon, monsterhunter }) }
+    const handleMonsterFilter = () => { monsterHunterFilter({ setFiltro, mario, zelda, pokemon, monsterhunter }) }
 
     return <aside className="filtros">
         <h2 className="categories">Franquias</h2>
         <div className="mario">
-            <input type="checkbox" name="mario" className="mario-checkbox" onChange={marioFilter} />
+            <input type="checkbox" name="mario" className="mario-checkbox" onChange={handleMarioFilter} />
             <label className='mario-label'>Mario</label>
         </div>
         <div className="pokemon">
-            <input type="checkbox" name="pokemon" className="pokemon-checkbox" onClick={pokemonFilter} />
+            <input type="checkbox" name="pokemon" className="pokemon-checkbox" onClick={handlePokemonFilter} />
             <label className='pokemon-label'>Pokémon</label>
         </div>
         <div className="zelda">
-            <input type="checkbox" name="zelda" className="zelda-checkbox" onClick={zeldaFilter} />
+            <input type="checkbox" name="zelda" className="zelda-checkbox" onClick={handleZeldaFilter} />
             <label className='zelda-label'>Zelda</label>
         </div>
         <div className="monster-hunter">
-            <input type="checkbox" name="monster-hunter" className="monster-hunter-checkbox" onClick={monsterHunterFilter} />
+            <input type="checkbox" name="monster-hunter" className="monster-hunter-checkbox" onClick={handleMonsterFilter} />
             <label className='monster-hunter-label'>Monster Hunter</label>
         </div>
         <input type="button" value="Filtrar" className='button-filter-categories' onClick={Filtrar} />

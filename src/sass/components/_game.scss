@@ -8,57 +8,68 @@
         box-shadow: 0px 12px 13px 4px rgba(0,0,0,0.21);
     }
 
-    img{
+    .game-photo{
         @include dimension(auto, 250px);
         background-color: red;
     }
 
-    .title{
-        @include dimension(auto, 90px);
-        @include font(16px, $bold);
-        @include color(transparent, $black-color);
-        @include text(center, none);
-        @include margin(0, 0, 0, 0);
-        @include padding(0, 0, 10px, 10px);
-    }
-
-    .new-price{
-        @include font(18px, $extra-bold);
-        @include color(transparent, $primary-red-color);
-    }
-
-    .old-price{
-        @include font(16px, $light);
-        @include dimension(auto, 21px);
-        @include color(transparent, $primary-gray-color);
-        transform: translateY(-10px);
-        text-decoration: line-through;
-    }
-
-    .buttons-game{
-        @include display(flex, row, center, center);
-        transform: translateY(-10px);
-
-        input{
-            @include border(0px, solid, transparent);
-            @include color($blue-color, $white-color);
-            @include margin(0, 0, 0, 20px);
-            @include padding(2px, 2px, 5px, 5px);
-            @include border-radius(2px, 2px, 2px, 2px);
-            @include font(auto, $bold);
-
-            &:hover{
-                @include color($gold-color, $white-color);
-            }
+    .container-game-infos{
+        @include display(flex, column, start, center);
+        
+        .title{
+            @include dimension(auto, 40px);
+            @include font(16px, $bold);
+            @include color(transparent, $black-color);
+            @include text(center, none);
+            @include margin(0, 0, 0, 0);
+            @include padding(0, 0, 10px, 10px);
         }
 
-        svg{
-            @include dimension(24px, 24px);
-            @include color(transparent, $blue-color);
-
-            &:hover{
-                @include color(transparent, $gold-color);
-                cursor: pointer;
+        .description-game{
+            @include font(12px, $light);
+            @include padding(0, 0, 0, 20px);
+            display: none;
+        }
+    
+        .new-price{
+            @include font(18px, $extra-bold);
+            @include color(transparent, $primary-red-color);
+        }
+    
+        .old-price{
+            @include font(16px, $light);
+            @include dimension(auto, 21px);
+            @include color(transparent, $primary-gray-color);
+            transform: translateY(-10px);
+            text-decoration: line-through;
+        }
+    
+        .buttons-game{
+            @include display(flex, row, center, center);
+            transform: translateY(-10px);
+    
+            input{
+                @include display(flex, row, center, center);
+                @include border(0px, solid, transparent);
+                @include color($blue-color, $white-color);
+                @include margin(0, 0, 0, 20px);
+                @include padding(2px, 2px, 5px, 5px);
+                @include border-radius(2px, 2px, 2px, 2px);
+                @include font(auto, $bold);
+    
+                &:hover{
+                    @include color($gold-color, $white-color);
+                }
+            }
+    
+            svg{
+                @include dimension(24px, 24px);
+                @include color(transparent, $blue-color);
+    
+                &:hover{
+                    @include color(transparent, $gold-color);
+                    cursor: pointer;
+                }
             }
         }
     }
