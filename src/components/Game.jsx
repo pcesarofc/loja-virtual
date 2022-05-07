@@ -9,7 +9,8 @@ const Game = ({ games, list }) => {
 
     const Add = () => { addToCart({ games }) }
 
-    return <div className="game"
+    return <div
+        className="game"
         style={{
             flexDirection: (list) ? 'row' : 'column',
             alignItems: (list) ? 'start' : 'center',
@@ -17,23 +18,29 @@ const Game = ({ games, list }) => {
             height: (list) ? 'auto' : '400px'
         }}
     >
-        <img src={games.img} alt="game-photo" className='game-photo'
+        <img
+            src={games.img}
+            alt="game-photo"
+            className='game-photo'
             style={{
                 marginLeft: (list) ? '20px' : '0px'
             }}
         />
-        <div className="container-game-infos"
+        <div
+            className="container-game-infos"
             style={{
                 alignItems: (list) ? 'start' : 'center',
                 marginLeft: (list) ? '20px' : '0px'
             }}
         >
-            <h3 className="title"
+            <h3
+                className="title"
                 style={{
                     paddingLeft: (list) ? '0px' : '10px'
                 }}
             >{games.game}</h3>
-            <p className="description-game"
+            <p
+                className="description-game"
                 style={{
                     display: (list) ? 'flex' : 'none'
                 }}
@@ -59,10 +66,13 @@ const Game = ({ games, list }) => {
             <p className="old-price">{games.oldprice}</p>
 
             <div className="buttons-game">
-                <input type="button" value="Detalhes" onClick={() => setLgShow(true)}
+                <input
+                    type="button"
+                    value="Detalhes"
                     style={{
                         display: (list) ? 'none' : 'flex'
                     }}
+                    onClick={() => setLgShow(true)}
                 />
                 <FaShoppingCart onClick={Add} />
             </div>

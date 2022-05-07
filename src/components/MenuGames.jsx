@@ -6,6 +6,7 @@ const MenuGames = ({ setList }) => {
 
     const listView = () => {
         $('.test').css("display", "flex")
+        $('.test').css("flexDirection", "column")
         setList(true)
     }
 
