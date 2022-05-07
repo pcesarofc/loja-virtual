@@ -1,5 +1,7 @@
 import { firebase, auth } from '../service/Firebase';
 import axios from 'axios';
+import $ from 'jquery';
+
 
 const Logout = ({setUsuario}) => {
     firebase.auth().signOut();
@@ -45,7 +47,7 @@ const loadAxios = ({quantity, setGames, url}) => {
 const expandGames = ({quantity, setGames, url, setQuantity}) => {
     var quantityupdated = quantity + 8;
     var i;
-        var newgames = []
+    var newgames = []
     
     axios.get(url).then(response => {
         response.data.length = quantityupdated;

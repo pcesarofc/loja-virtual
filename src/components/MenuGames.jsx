@@ -1,12 +1,23 @@
 import { React } from '../config/configComponents';
 import { BsFillGrid3X3GapFill, FaListUl } from '../config/configIcons';
+import $ from 'jquery';
 
-const MenuGames = () => {
+const MenuGames = ({ setList }) => {
+
+    const listView = () => {
+        $('.test').css("display", "flex")
+        setList(true)
+    }
+
+    const listGrid = () => {
+        $('.test').css("display", "grid")
+        setList(false)
+    }
 
     return <menu className='menu-games'>
         <div className="grid-list">
-            <BsFillGrid3X3GapFill />
-            <FaListUl />
+            <BsFillGrid3X3GapFill onClick={listGrid} />
+            <FaListUl onClick={listView} />
         </div>
 
         <select className="dropbox">
