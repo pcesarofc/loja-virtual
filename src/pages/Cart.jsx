@@ -14,7 +14,7 @@ const Cart = () => {
             <section className="cart-section">
                 <div className="products-cart">
                     <h4>Produtos</h4>
-                    {productsCart.map((productsCart) => (<GameOnCart productsCart={productsCart} />))}
+                    {productsCart.map((productsCart) => (<GameOnCart productsCart={productsCart} setProductsCart={setProductsCart} setValue={setValue} />))}
                 </div>
                 <div className="buy">
                     <div className="discount">
