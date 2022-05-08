@@ -7,7 +7,7 @@ const Cart = () => {
     const [productsCart, setProductsCart] = useState([])
     const [value, setValue] = useState('');
 
-    useEffect(() => { LoadCartGames({ setProductsCart, value, setValue }) }, [])
+    useEffect(() => { LoadCartGames({ setProductsCart, setValue }) }, [])
 
     return <main className="cart-page">
         <article>

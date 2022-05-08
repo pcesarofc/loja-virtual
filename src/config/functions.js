@@ -166,7 +166,7 @@ function monsterHunterFilter({setFiltro, mario, zelda, pokemon, monsterhunter}) 
     } else setFiltro('')
 }
 
-const LoadCartGames = ({setProductsCart, value, setValue}) =>{
+const LoadCartGames = ({setProductsCart, setValue}) =>{
     
     const user = firebase.auth().currentUser;
 
@@ -175,21 +175,61 @@ const LoadCartGames = ({setProductsCart, value, setValue}) =>{
         var newgames = []
         var total = 0
         axios.get('https://loja-virtualpc-default-rtdb.firebaseio.com/clientes/' + user.uid + '/chart.json').then(response => {
-            var obj = response.data
-            var result = Object.keys(obj).map(function (key) { return obj[key];  });
-
-            for (i in result) {
-                newgames = [...newgames, {
-                    game: result[i].game,
-                    img: result[i].img,
-                    price: 'R$' + result[i].price.toFixed(2).toString().replace(".", ",")
-                }]
-                total = total + result[i].price;
+            if(response.data){
+                var obj = response.data
+                var result = Object.keys(obj).map(function (key) { return obj[key];  });
+    
+                for (i in result) {
+                    newgames = [...newgames, {
+                        game: result[i].game,
+                        img: result[i].img,
+                        price: 'R$' + result[i].price.toFixed(2).toString().replace(".", ",")
+                    }]
+                    total = total + result[i].price;
+                }
+                setValue('R$' + total.toFixed(2).toString().replace('.', ','))
+                setProductsCart(newgames)
+            } else{
+                setValue('R$0,00')
             }
-            setValue('R$' + total.toFixed(2).toString().replace('.', ','))
-            setProductsCart(newgames)
+            
         })
     }
+}
+
+const DeleteGame = ({ productsCart, setValue, setProductsCart }) => {
+    const url = 'https://loja-virtualpc-default-rtdb.firebaseio.com/clientes/'
+    const user = firebase.auth().currentUser;
+    var i;
+    var price = 0;
+   
+    axios.get(url + user.uid + '/chart.json').then(response => {
+
+        for (i in response.data) {
+            if (response.data[i].game == productsCart.game) {
+                axios.delete(url + user.uid + '/chart/' + i + '.json')
+            }
+        }
+
+        var array = []
+        for (i in response.data) {
+            array = [...array, {
+                game: response.data[i].game,
+                img: response.data[i].img,
+                price: 'R$' + response.data[i].price.toFixed(2).toString().replace('.', ',')
+            }]
+        }
+
+        var newArray = array.filter((item) => item.game !== productsCart.game);
+
+        for (i in newArray) {
+            price = price + parseFloat(newArray[i].price.replace('R$', ''))
+        }
+
+        setValue('R$' + price.toFixed(2).toString().replace('.', ','))
+        setProductsCart(newArray);
+
+    })
 }
 
 export {
@@ -204,5 +244,6 @@ export {
     pokemonFilter,
     zeldaFilter,
     monsterHunterFilter,
-    LoadCartGames
+    LoadCartGames,
+    DeleteGame
 };
