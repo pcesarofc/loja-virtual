@@ -11,13 +11,10 @@ const Games = () => {
     const [showMore, setShowMore] = useState(true);
     const [list, setList] = useState(false);
 
-    const url = 'https://loja-virtualpc-default-rtdb.firebaseio.com/jogos.json';
-
-    const verMais = () => { expandGames({ quantity, setGames, setQuantity, url }) };
-
+    const verMais = () => { expandGames({ quantity, setGames, setQuantity }) };
     const verMenos = () => { retractGames({ setQuantity, setGames, games }) };
 
-    useEffect(() => { loadAxios({ quantity, setGames, url }) }, [])
+    useEffect(() => { loadAxios({ quantity, setGames }) }, [])
 
     return (quantity < 30)
         ? <main className="game-page">

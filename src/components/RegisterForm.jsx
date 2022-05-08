@@ -1,6 +1,7 @@
 import { React } from '../config/configComponents';
 
 const RegisterForm = () => {
+
     return <form className="login-form">
         <p className="title-form">Cadastrar</p>
 

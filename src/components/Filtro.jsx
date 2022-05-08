@@ -1,20 +1,20 @@
-import { loadAxios, filterGames, marioFilter, pokemonFilter, zeldaFilter, monsterHunterFilter } from '../config/functions';
-import { React } from '../config/configComponents';
+import { loadAxios, filterGames, marioFilter, pokemonFilter, zeldaFilter, monsterHunterFilter } from '../config/functions'
+import { React } from '../config/configComponents'
 
 const Filtro = ({ setGames, quantity, filtro, setFiltro, setShowMore }) => {
 
-    const url = 'https://loja-virtualpc-default-rtdb.firebaseio.com/jogos.json';
-    var mario = document.getElementsByName('mario');
-    var zelda = document.getElementsByName('zelda');
-    var pokemon = document.getElementsByName('pokemon');
-    var monsterhunter = document.getElementsByName('monster-hunter');
+    var mario = document.getElementsByName('mario')
+    var zelda = document.getElementsByName('zelda')
+    var pokemon = document.getElementsByName('pokemon')
+    var monsterhunter = document.getElementsByName('monster-hunter')
 
-    function Filtrar() {
+    const Filtrar = () => {
+
         if (filtro != '') {
-            filterGames({ setGames, filtro, url })
+            filterGames({ setGames, filtro })
             setShowMore(false)
         } else {
-            loadAxios({ setGames, quantity, url })
+            loadAxios({ setGames, quantity })
             setShowMore(true)
         }
     }

@@ -1,5 +1,5 @@
-import { React } from '../config/configComponents';
-import { BsSearch } from '../config/configIcons';
+import { React } from '../config/configComponents'
+import { BsSearch } from '../config/configIcons'
 
 const FormSearch = () => {
 
