@@ -2,6 +2,7 @@ import { React } from '../config/configComponents';
 import { useEffect, useState } from 'react';
 import GameOnCart from '../components/GameOnCart';
 import { LoadCartGames } from '../config/functions';
+import EmptyCart from '../assets/Empty Cart.png';
 
 const Cart = () => {
     const [productsCart, setProductsCart] = useState([])
@@ -14,6 +15,10 @@ const Cart = () => {
             <section className="cart-section">
                 <div className="products-cart">
                     <h4>Produtos</h4>
+                    <img src={EmptyCart} alt="empty-cart" className='empty-cart'
+                        style={{
+                            display: (value != 'R$0,00') ? 'none' : 'flex'
+                        }} />
                     {productsCart.map((productsCart) => (<GameOnCart productsCart={productsCart} setProductsCart={setProductsCart} setValue={setValue} />))}
                 </div>
                 <div className="buy">

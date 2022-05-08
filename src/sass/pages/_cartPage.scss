@@ -15,6 +15,10 @@
                     @include color(transparent, $blue-color);
                     border-bottom: 1px solid $primary-gray-color;
                 }
+
+                .empty-cart{
+                    @include dimension(300px, auto);
+                }
             }
 
             .buy{
