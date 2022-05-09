@@ -1,0 +1,41 @@
+.home-page{
+   
+    article{
+        @include display (flex, column, center, center);
+
+
+        .title-section{
+            @include margin(50px, 0, 0, 0);
+        }
+
+        .contact{
+            @include dimension(100%, 500px);
+            @include display(flex, row, space-evenly, center);
+
+            input{
+                @include dimension(200px, 50px);
+                @include color($blue-color, $white-color);
+                @include border(0px, solid, transparent);
+                @include border-radius(5px, 5px, 5px, 5px);
+                @include font(24px, $bold);
+
+                &:hover{
+                    @include color($gold-color, $white-color);
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 600px){
+    
+    .home-page{
+   
+        article{
+    
+            .contact{
+                @include display(flex, column, space-evenly, center);
+            }
+        }
+    }
+}

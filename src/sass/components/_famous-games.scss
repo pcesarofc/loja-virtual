@@ -1,0 +1,42 @@
+.famous-games{
+
+    @include display(flex, row, space-evenly, center);
+    @include dimension(100%, 400px);
+
+    img{
+        @include dimension (320px, auto);
+        @include margin(20px, 20px, 0, 0);
+    }
+}
+
+@media screen and(max-width: 970px){
+    
+    .famous-games{
+        
+        img{
+            @include dimension (250px, auto);
+        }
+    }
+}
+
+@media screen and(max-width: 760px){
+    
+    .famous-games{
+        @include display(flex, column, space-evenly, center);
+        @include dimension(100%, auto);
+
+        img{
+            @include dimension (400px, auto);
+        }
+    }
+}
+
+@media screen and(max-width: 420px){
+    
+    .famous-games{
+        
+        img{
+            @include dimension (300px, auto);
+        }
+    }
+}

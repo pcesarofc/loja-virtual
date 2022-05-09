@@ -54,3 +54,67 @@
         }
     }
 }
+
+@media screen and(max-width: 680px){
+    .user-page{
+    
+        article{
+    
+            .user-section{
+    
+                .user-photo-email{
+    
+                    img{
+                        @include dimension(150px, auto);
+                    }
+    
+                    p{
+                        @include font(16px, $light);
+                    }
+                }
+            }
+    
+            .actions{
+    
+                h3{
+                    @include font(24px, $bold);
+                }
+    
+                .icons{
+    
+                    svg{
+                        @include dimension(30px, auto);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 520px){
+    .user-page{
+    
+        article{
+
+            .user-section{
+                @include margin (0, 30px, 0, 0);
+                @include display(flex, column, center, center);
+    
+                .user-photo-email{
+                    @include margin(0, 0, 0, 0);
+    
+                    img{
+                        @include dimension(150px, auto);
+                    }
+                }
+            }
+    
+            .actions{
+    
+                h3{
+                    @include font(24px, $bold);
+                }
+            }
+        }
+    }
+}
