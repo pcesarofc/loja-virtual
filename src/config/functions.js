@@ -252,7 +252,7 @@ const createAccount = ({setUsuario}) => {
         .catch((error) => {
             if (error.code === 'auth/weak-password') {
                 window.alert('A senha precisa ter pelo menos 6 dígitos');
-            }
+            } else if (error.code === 'auth/invalid-email') window.alert('Email inválido')
         });
 }
 
@@ -269,6 +269,7 @@ const signInEmail = ({setUsuario}) => {
             if (error.code === 'auth/user-not-found') {
                 window.alert('Usuário não encontrado')
             } else if (error.code === 'auth/wrong-password') window.alert('Senha incorreta')
+            else if(error.code === 'auth/invalid-email') window.alert('Email inválido')
         });
 }
 

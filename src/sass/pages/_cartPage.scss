@@ -1,9 +1,7 @@
 .cart-page{
-
     article{
 
         .cart-section{
-
             @include display(flex, row, space-around, start);
             @include margin(30px, 20px, 0, 0);
 

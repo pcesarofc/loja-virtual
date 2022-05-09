@@ -1,6 +1,7 @@
 .user-page{
     @include dimension(auto, 500px);
     @include display(flex, row, center, center);
+    
 
     article{
 
@@ -57,6 +58,7 @@
 
 @media screen and(max-width: 680px){
     .user-page{
+        
     
         article{
     

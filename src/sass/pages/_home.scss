@@ -4,6 +4,12 @@
         @include display (flex, column, center, center);
         @include dimension(100%, auto);
 
+        .title-section{
+            @include margin(50px, 50px, 0, 0);
+            @include color(transparent, $primary-red-color);
+            @include font(40px, $bold);
+        }
+
         .famous-container{
             @include dimension(100%, auto);
             @include display (flex, column, center, center);
@@ -12,12 +18,6 @@
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
-
-            .title-section{
-                @include margin(50px, 0, 0, 0);
-                @include color(transparent, $white-color);
-                @include font(30px, $bold);
-            }
         }
         
         .contact{
@@ -54,6 +54,10 @@
    
         article{
     
+            .title-section{
+                @include font(30px, $bold);
+            }
+
             .contact{
                 @include display(flex, column, space-evenly, center);
             }

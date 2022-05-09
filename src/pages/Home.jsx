@@ -7,8 +7,8 @@ const Home = () => {
     return <main className="home-page">
         <article>
             <CaroulselGames />
+            <h2 className='title-section'>PRINCIPAIS FRANQUIAS</h2>
             <div className="famous-container">
-                <h2 className='title-section'>PRINCIPAIS FRANQUIAS</h2>
                 <FamousGames />
             </div>
             <section className="contact">

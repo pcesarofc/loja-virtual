@@ -1,0 +1,109 @@
+.contact-page{
+    
+    article{
+        @include margin(50px, 50px, 0, 0);
+
+        .section-contato{
+            @include dimension(100%, 60vh);
+            @include display(flex, row, space-evenly, center);
+
+            .info-contacts{
+                
+                h3{
+                    @include font(30px, $bold);
+                    @include margin(0, 50px, 0, 0);
+                    @include color(transparent, $primary-gray-color);
+                    border-bottom: 1px solid $primary-gray-color;
+                }
+
+                h4{
+                    @include font(24px, $bold);
+                    @include color(transparent, $primary-gray-color);
+                }
+
+                p{
+                    @include color(transparent, $primary-gray-color);
+                }
+            }
+
+            form{
+                @include display(flex, column, start, start);
+
+                .email-contact, .name-contact{
+                    @include dimension(300px, auto);
+                    @include margin(0, 10px, 0, 0);
+
+                    &:focus{
+                        box-shadow: 0 0 0 0;
+                        outline: 0;
+                    }
+                }
+
+                .message-contact{
+                    @include dimension(300px, 100px);
+                    @include margin(0, 10px, 0, 0);
+
+                    &:focus{
+                        box-shadow: 0 0 0 0;
+                        outline: 0;
+                    }
+                }
+
+                .button-contact{
+                    @include color($blue-color, $white-color);
+                    @include border(1px, solid, $black-color);
+                    @include font(16px, $bold);
+                    @include dimension(100px, auto);
+                    @include border-radius(5px, 5px, 5px, 5px);
+
+                    &:hover{
+                        @include color($gold-color, $white-color);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:720px){
+    .contact-page{
+
+        article{
+            @include margin(50px, 50px, 0, 0);
+    
+            .section-contato{
+                @include dimension(100%, auto);
+                @include display(flex, column, space-evenly, center);
+    
+                .info-contacts{
+                    @include display(flex, column, center, center);
+
+                    .number{
+                        @include margin(0, 50px, 0, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:420px){
+    .contact-page{
+
+        article{
+            @include margin(50px, 50px, 0, 0);
+    
+            .section-contato{
+                @include display(flex, column, space-evenly, center);
+    
+                .info-contacts{
+
+                    .title-contact{
+                        @include font(24px, $bold);
+                    }
+                }
+            }
+        }
+    }
+}

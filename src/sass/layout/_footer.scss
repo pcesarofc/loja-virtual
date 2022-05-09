@@ -14,6 +14,10 @@
             list-style: none;
 
             li{
+                @include font(18px, $light);
+                @include color(transparent, $white-color);
+                @include text(start, none);
+                @include dimension(auto, auto);
 
                 a{
                     @include font(18px, $light);
