@@ -7,10 +7,12 @@ const Home = () => {
     return <main className="home-page">
         <article>
             <CaroulselGames />
-            <h2 className='title-section'>Principais franquias</h2>
-            <FamousGames />
+            <div className="famous-container">
+                <h2 className='title-section'>PRINCIPAIS FRANQUIAS</h2>
+                <FamousGames />
+            </div>
             <section className="contact">
-                <h2>Entre em contato</h2>
+                <h2>ENTRE EM CONTATO CONOSCO</h2>
                 <Link to="/contact">
                     <input type="button" value="Contato" />
                 </Link>

@@ -2,19 +2,40 @@
    
     article{
         @include display (flex, column, center, center);
+        @include dimension(100%, auto);
 
+        .famous-container{
+            @include dimension(100%, auto);
+            @include display (flex, column, center, center);
+            background-image: url('../../assets/Switch.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
 
-        .title-section{
-            @include margin(50px, 0, 0, 0);
+            .title-section{
+                @include margin(50px, 0, 0, 0);
+                @include color(transparent, $white-color);
+                @include font(30px, $bold);
+            }
         }
-
+        
         .contact{
-            @include dimension(100%, 500px);
+            @include dimension(100%, 300px);
             @include display(flex, row, space-evenly, center);
+            background-image: url('../../assets/background.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            h2{
+                @include font(24px, $bold);
+            }
 
             input{
                 @include dimension(200px, 50px);
-                @include color($blue-color, $white-color);
+                @include color($primary-red-color, $white-color);
                 @include border(0px, solid, transparent);
                 @include border-radius(5px, 5px, 5px, 5px);
                 @include font(24px, $bold);

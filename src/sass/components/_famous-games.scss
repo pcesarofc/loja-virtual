@@ -1,11 +1,15 @@
 .famous-games{
-
     @include display(flex, row, space-evenly, center);
-    @include dimension(100%, 400px);
+    @include dimension(100%, 450px);
 
     img{
         @include dimension (320px, auto);
-        @include margin(20px, 20px, 0, 0);
+        @include margin(20px, 50px, 0, 0);
+        box-shadow: 5px 5px 15px -3px #000000;
+
+        &:hover{
+            box-shadow: inset 5px 5px 50px -3px #000000;
+        }
     }
 }
 
