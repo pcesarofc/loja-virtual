@@ -218,7 +218,7 @@ const DeleteGame = ({ productsCart, setValue, setProductsCart }) => {
         var newArray = []
 
         for (i in response.data) {
-            if (response.data[i].game == productsCart.game) {
+            if (response.data[i].game === productsCart.game) {
                 axios.delete(uri + '/clientes/' + user.uid + '/chart/' + i + '.json')
             } else {}
 
@@ -240,6 +240,38 @@ const DeleteGame = ({ productsCart, setValue, setProductsCart }) => {
     })
 }
 
+const createAccount = ({setUsuario}) => {
+    var email = document.getElementsByClassName('email')[0].value
+    var password = document.getElementsByClassName('password')[0].value
+
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            var user = userCredential.user;
+            setUsuario(user);
+        })
+        .catch((error) => {
+            if (error.code === 'auth/weak-password') {
+                window.alert('A senha precisa ter pelo menos 6 dígitos');
+            }
+        });
+}
+
+const signInEmail = ({setUsuario}) => {
+    var email = document.getElementsByClassName('email-login')[0].value
+    var password = document.getElementsByClassName('password-login')[0].value
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            var user = userCredential.user;
+            setUsuario(user);
+        })
+        .catch((error) => {
+            if (error.code === 'auth/user-not-found') {
+                window.alert('Usuário não encontrado')
+            } else if (error.code === 'auth/wrong-password') window.alert('Senha incorreta')
+        });
+}
+
 export {
     Login,
     Logout,
@@ -253,5 +285,7 @@ export {
     zeldaFilter,
     monsterHunterFilter,
     LoadCartGames,
-    DeleteGame
+    DeleteGame,
+    createAccount,
+    signInEmail
 };

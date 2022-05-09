@@ -15,7 +15,7 @@
     .input-text{
         @include dimension(190px, auto);
 
-        .email, .password{
+        .email, .password, .email-login, .password-login{
             @include border(1px, solid, $primary-gray-color);
             @include border-radius(5px, 5px, 5px, 5px);
             @include margin(0, 10px, 0, 0);
