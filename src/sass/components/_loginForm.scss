@@ -15,12 +15,14 @@
 
     .input-text{
         @include dimension(190px, auto);
+        @include display(flex, column, center, center);
 
         .email, .password, .email-login, .password-login{
             @include border(0px, solid, transparent);
             @include color($secondary-gray-color, $black-color);
             @include margin(0, 10px, 0, 0);
             @include padding(5px, 5px, 10px, 10px);
+            @include dimension(190px, auto);
 
             &:focus{
                 box-shadow: 0 0 0 0;
@@ -30,7 +32,7 @@
     }
 
     .check-menu{
-        @include margin(0, 0, 0, 10px);
+        @include margin(0, 0, 0, 20px);
         transform: translateY(-20px);
         align-self: end;
 
@@ -56,7 +58,7 @@
         }
 
         a{
-
+            
             .register-button{
                 @include dimension(90px, 30px);
                 @include color($primary-red-color, $white-color);
