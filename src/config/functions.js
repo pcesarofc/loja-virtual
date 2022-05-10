@@ -30,7 +30,8 @@ const loadAxios = ({quantity, setGames}) => {
                         newprice: "R$" + response.data[i].oldprice.toFixed(2).toString().replace(".", ","),
                         oldprice: " ",
                         img: response.data[i].img,
-                        franquia: response.data[i].franquia
+                        franquia: response.data[i].franquia,
+                        description: response.data[i].description
                     }]
                 } else {
                     newgames = [...newgames, {
@@ -38,7 +39,8 @@ const loadAxios = ({quantity, setGames}) => {
                         newprice: "R$" + response.data[i].newprice.toFixed(2).toString().replace(".", ","),
                         oldprice: "R$" + response.data[i].oldprice.toFixed(2).toString().replace(".", ","),
                         img: response.data[i].img,
-                        franquia: response.data[i].franquia
+                        franquia: response.data[i].franquia,
+                        description: response.data[i].description
                     }]
                 }
             }
@@ -64,7 +66,8 @@ const expandGames = ({quantity, setGames, setQuantity}) => {
                     newprice: "R$" + response.data[i].oldprice.toFixed(2).toString().replace(".", ","),
                     oldprice: " ",
                     img: response.data[i].img,
-                    franquia: response.data[i].franquia
+                    franquia: response.data[i].franquia,
+                    description: response.data[i].description
                 }]
             } else {
                 newgames = [...newgames, {
@@ -72,7 +75,8 @@ const expandGames = ({quantity, setGames, setQuantity}) => {
                     newprice: "R$" + response.data[i].newprice.toFixed(2).toString().replace(".", ","),
                     oldprice: "R$" + response.data[i].oldprice.toFixed(2).toString().replace(".", ","),
                     img: response.data[i].img,
-                    franquia: response.data[i].franquia
+                    franquia: response.data[i].franquia,
+                    description: response.data[i].description
                 }]
             }
         }
@@ -120,7 +124,8 @@ const filterGames = ({setGames, filtro}) => {
                     newprice: "R$" + response.data[i].oldprice.toFixed(2).toString().replace(".", ","),
                     oldprice: " ",
                     img: response.data[i].img,
-                    franquia: response.data[i].franquia
+                    franquia: response.data[i].franquia,
+                    description: response.data[i].description
                 }]
             } else {
                 newgames = [...newgames, {
@@ -128,7 +133,8 @@ const filterGames = ({setGames, filtro}) => {
                     newprice: "R$" + response.data[i].newprice.toFixed(2).toString().replace(".", ","),
                     oldprice: "R$" + response.data[i].oldprice.toFixed(2).toString().replace(".", ","),
                     img: response.data[i].img,
-                    franquia: response.data[i].franquia
+                    franquia: response.data[i].franquia,
+                    description: response.data[i].description
                 }]
             }
         }

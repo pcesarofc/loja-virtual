@@ -7,6 +7,7 @@
         grid-template-rows: 100px 1fr;
 
         .section-games{
+            
             .test{
                 display: grid;
                 justify-items: center;
@@ -29,6 +30,7 @@
 }
 
 @media screen and(max-width:620px){
+    
     .game-page{
 
         .game-article{

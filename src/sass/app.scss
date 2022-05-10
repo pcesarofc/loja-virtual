@@ -24,7 +24,6 @@
 
 //PAGES
 @import './pages/cartPage';
-@import './pages/error';
 @import './pages/games';
 @import './pages/home';
 @import './pages/login';
@@ -41,6 +40,20 @@ html{
         margin: 0;
         width: 100%;
         height: 100%;
+
+        &::-webkit-scrollbar {
+            width: 12px;
+        }
+    
+        &::-webkit-scrollbar-track {
+            background: $white-color;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background-color: $primary-red-color;
+            border-radius: 20px;
+            border: 3px solid $white-color;
+        }
     
         #root{
             width: 100%;

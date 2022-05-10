@@ -1,7 +1,7 @@
 import React from "react";
-import Mario from '../assets/mario.png';
-import Pokemon from '../assets/pokemon.png';
-import Zelda from '../assets/zelda.png';
+import Mario from '../assets/mario.jpg';
+import Pokemon from '../assets/pokemon.jpg';
+import Zelda from '../assets/zelda.jpg';
 
 const FamousGames = () => {
     return <section className="famous-games">

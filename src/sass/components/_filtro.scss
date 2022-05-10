@@ -39,7 +39,8 @@
     }
 }
 
-@media screen and(max-width:620px){
+@media screen and(max-width: 620px){
+    
     .filtros{
         @include dimension(250px, 300px);
         @include margin(0, 20px, 0, 0);

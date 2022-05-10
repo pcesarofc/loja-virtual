@@ -1,7 +1,7 @@
 import { React } from '../config/configComponents';
 import { Carousel } from 'react-bootstrap';
-import Image1 from '../assets/Caroulsel 1.png';
-import Image2 from '../assets/Caroulsel 2.png';
+import Image1 from '../assets/Caroulsel 1.jpg';
+import Image2 from '../assets/Caroulsel 2.jpg';
 
 
 const CaroulselGames = () => {

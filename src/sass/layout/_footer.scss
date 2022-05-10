@@ -35,18 +35,12 @@
 
     .subscribe{
 
-        h4{
-
-        }
-
-        p{
-
-        }
-
         .input-text-footer{
 
             .input-search-footer{
-                @include border(1px, solid, $black-color);
+                @include color($secondary-gray-color, $black-color);
+                @include border(0px, solid, transparent);
+                @include padding(5px, 5px, 10px, 10px);
                 @include dimension(150px, auto);
 
                 &:focus{
@@ -57,6 +51,7 @@
     
             svg{
                 @include margin(0, 0,  5px, 0);
+                @include dimension(20px, 20px);
     
                 &:hover{
                     @include color(transparent, $gold-color);
@@ -67,7 +62,7 @@
     }
 }
 
-@media screen and(max-width:500px) {
+@media screen and(max-width: 500px) {
     
     .footer-page{
     

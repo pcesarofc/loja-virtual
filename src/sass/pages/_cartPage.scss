@@ -1,4 +1,5 @@
 .cart-page{
+    
     article{
 
         .cart-section{
@@ -34,8 +35,9 @@
 
                     .cupom{
                         @include dimension(150px, 40px);
-                        @include border(1px, solid, $primary-gray-color);
-                        @include border-radius(5px, 5px, 5px, 5px);
+                        @include color($secondary-gray-color, $black-color);
+                        @include border(0px, solid, transparent);
+                        @include padding(5px, 5px, 10px, 10px);
 
                         &:focus{
                             box-shadow: 0 0 0 0;
@@ -47,8 +49,8 @@
                         @include color($blue-color, $white-color);
                         @include dimension(auto, 40px);
                         @include font(18px, $bold);
-                        @include border(1px, solid, $primary-gray-color);
-                        @include border-radius(5px, 5px, 5px, 5px);
+                        @include border(0px, solid, transparent);
+                        @include border-radius(2px, 2px, 2px, 2px);
 
                         &:hover{
                             @include color($gold-color, $white-color);
@@ -70,8 +72,8 @@
                     @include color($blue-color, $white-color);
                     @include dimension(auto, 40px);
                     @include font(18px, $bold);
-                    @include border(1px, solid, $primary-gray-color);
-                    @include border-radius(5px, 5px, 5px, 5px);
+                    @include border(0px, solid, transparent);
+                    @include border-radius(2px, 2px, 2px, 2px);
     
                     &:hover{
                         @include color($gold-color, $white-color);

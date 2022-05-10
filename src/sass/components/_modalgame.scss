@@ -17,11 +17,17 @@
                 align-self: start;
             }
 
+            p{
+                @include margin(0, 0, 0, 0);
+                @include dimension(auto, 288px);
+            }
+
             .prices{
                 @include display(flex, column, space-between, center);
 
 
                 h3{
+                    
                     b{
                         @include color(transparent, $primary-red-color);
                     }
@@ -30,10 +36,10 @@
 
             .button-cart{
                 @include dimension(auto, 40px);
+                @include font(16px, $bold);
                 @include color($blue-color, $white-color);
                 @include border(0px, solid, transparent);
                 @include border-radius(2px, 2px, 2px, 2px);
-                transform: translateY(20px);
 
                 &:hover{
                     @include color($gold-color, $white-color);
@@ -97,6 +103,10 @@
                 
                 h2{
                     @include font(22px, $bold);
+                }
+
+                p{
+                    @include dimension(auto, auto);
                 }
     
                 .prices{

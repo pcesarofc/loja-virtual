@@ -17,8 +17,8 @@
         @include dimension(190px, auto);
 
         .email, .password, .email-login, .password-login{
-            @include border(1px, solid, $primary-gray-color);
-            @include border-radius(5px, 5px, 5px, 5px);
+            @include border(0px, solid, transparent);
+            @include color($secondary-gray-color, $black-color);
             @include margin(0, 10px, 0, 0);
             @include padding(5px, 5px, 10px, 10px);
 
@@ -40,12 +40,13 @@
     }
 
     .buttons-form{
+        
         .login-button{
             @include dimension(90px, 30px);
             @include color($primary-red-color, $white-color);
             @include font(14px, $bold);
             @include border(0px, solid, transparent);
-            @include border-radius(5px, 5px, 5px, 5px);
+            @include border-radius(2px, 2px, 2px, 2px);
             @include margin(0, 0, 0, 5px);
             transform: translateY(-20px);
     
@@ -61,7 +62,7 @@
                 @include color($primary-red-color, $white-color);
                 @include font(14px, $bold);
                 @include border(0px, solid, transparent);
-                @include border-radius(5px, 5px, 5px, 5px);
+                @include border-radius(2px, 2px, 2px, 2px);
                 transform: translateY(-20px);
         
                 &:hover{

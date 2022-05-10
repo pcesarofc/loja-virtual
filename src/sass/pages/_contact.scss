@@ -30,8 +30,11 @@
                 @include display(flex, column, start, start);
 
                 .email-contact, .name-contact{
-                    @include dimension(300px, auto);
+                    @include dimension(300px, 35px);
                     @include margin(0, 10px, 0, 0);
+                    @include color($secondary-gray-color, $black-color);
+                    @include border(0px, solid, transparent);
+                    @include padding(5px, 5px, 10px, 10px);
 
                     &:focus{
                         box-shadow: 0 0 0 0;
@@ -42,6 +45,9 @@
                 .message-contact{
                     @include dimension(300px, 100px);
                     @include margin(0, 10px, 0, 0);
+                    @include color($secondary-gray-color, $black-color);
+                    @include border(0px, solid, transparent);
+                    @include padding(5px, 5px, 10px, 10px);
 
                     &:focus{
                         box-shadow: 0 0 0 0;
@@ -51,10 +57,10 @@
 
                 .button-contact{
                     @include color($blue-color, $white-color);
-                    @include border(1px, solid, $black-color);
+                    @include border(0px, solid, transparent);
                     @include font(16px, $bold);
-                    @include dimension(100px, auto);
-                    @include border-radius(5px, 5px, 5px, 5px);
+                    @include dimension(100px, 35px);
+                    @include border-radius(2px, 2px, 2px, 2px);
 
                     &:hover{
                         @include color($gold-color, $white-color);
@@ -67,6 +73,7 @@
 }
 
 @media screen and(max-width:720px){
+    
     .contact-page{
 
         article{
@@ -89,6 +96,7 @@
 }
 
 @media screen and(max-width:420px){
+    
     .contact-page{
 
         article{
