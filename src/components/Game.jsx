@@ -27,7 +27,8 @@ const Game = ({ games, list }) => {
             }} >
             <h3 className="title"
                 style={{
-                    paddingLeft: (list) ? '0px' : '10px'
+                    paddingLeft: (list) ? '0px' : '10px',
+                    textAlign: (list) ? 'start' : 'center'
                 }} >
                 {games.game}
             </h3>
