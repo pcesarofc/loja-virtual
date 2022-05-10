@@ -5,13 +5,16 @@ import { AuthContext } from '../contexts/AuthContext';
 import { Link } from 'react-router-dom';
 import { Login, signInEmail } from '../config/functions';
 
+
 const LoginForm = () => {
+
     const { setUsuario } = useContext(AuthContext);
 
     const loginWithEmail = () => { signInEmail({ setUsuario }) }
 
 
     return <form className="login-form">
+
         <p className="title-form">Login</p>
 
         <div className="input-text">
@@ -36,6 +39,7 @@ const LoginForm = () => {
         </div>
 
         <BsGoogle className='google-icon' onClick={Login} />
+
     </form>
 }
 

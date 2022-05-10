@@ -4,7 +4,8 @@ import { BsPersonCircle } from '../config/configIcons';
 import { Logout } from '../config/functions';
 import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import NoUser from '../assets/no-user.jpg'
+import NoUser from '../assets/no-user.jpg';
+
 
 const ProfilePhoto = () => {
 
@@ -13,33 +14,45 @@ const ProfilePhoto = () => {
 
     return (usuario != null)
         ? <div className='user-control'>
+
             <Dropdown>
+
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    <img src={(usuario.photo != null) ? usuario.photo : NoUser} alt="profile-photo" className="profile-photo" />
+                    <img src={(usuario.photo != null) ? usuario.photo : NoUser} alt="profile" className="profile-photo" />
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
                     <Dropdown.Item onClick={Deslogar}>Logout</Dropdown.Item>
                 </Dropdown.Menu>
+
             </Dropdown>
+
             <p className="user-name">Olá {usuario.name}!</p>
+
         </div>
 
         : <div className="user-control">
+
             <Dropdown>
+
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
                     <BsPersonCircle />
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
+
                     <Dropdown.Item>
                         <div>
                             <Link to="/login">Login</Link>
                         </div>
                     </Dropdown.Item>
+
                 </Dropdown.Menu>
+
             </Dropdown>
+
             <p className="user-name">Usuário deslogado</p>
+
         </div>
 }
 

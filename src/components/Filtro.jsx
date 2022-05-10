@@ -1,5 +1,5 @@
-import { loadAxios, filterGames, marioFilter, pokemonFilter, zeldaFilter, monsterHunterFilter } from '../config/functions'
-import { React } from '../config/configComponents'
+import { loadAxios, filterGames, marioFilter, pokemonFilter, zeldaFilter, monsterHunterFilter } from '../config/functions';
+import { React } from '../config/configComponents';
 
 const Filtro = ({ setGames, quantity, filtro, setFiltro, setShowMore }) => {
 
@@ -25,24 +25,31 @@ const Filtro = ({ setGames, quantity, filtro, setFiltro, setShowMore }) => {
     const handleMonsterFilter = () => { monsterHunterFilter({ setFiltro, mario, zelda, pokemon, monsterhunter }) }
 
     return <aside className="filtros">
+
         <h2 className="categories">Franquias</h2>
+
         <div className="mario">
-            <input type="checkbox" name="mario" className="mario-checkbox" onChange={handleMarioFilter} />
+            <input type="checkbox" name="mario" className="mario-checkbox" onClick={handleMarioFilter} />
             <label className='mario-label'>Mario</label>
         </div>
+
         <div className="pokemon">
             <input type="checkbox" name="pokemon" className="pokemon-checkbox" onClick={handlePokemonFilter} />
             <label className='pokemon-label'>Pokémon</label>
         </div>
+
         <div className="zelda">
             <input type="checkbox" name="zelda" className="zelda-checkbox" onClick={handleZeldaFilter} />
             <label className='zelda-label'>Zelda</label>
         </div>
+
         <div className="monster-hunter">
             <input type="checkbox" name="monster-hunter" className="monster-hunter-checkbox" onClick={handleMonsterFilter} />
             <label className='monster-hunter-label'>Monster Hunter</label>
         </div>
+
         <input type="button" value="Filtrar" className='button-filter-categories' onClick={Filtrar} />
+
     </aside>
 }
 

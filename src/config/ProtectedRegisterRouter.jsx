@@ -5,6 +5,7 @@ import { Navigate } from 'react-router-dom';
 
 
 const ProtectedRegisterRouter = () => {
+
     const { usuario } = useContext(AuthContext);
 
     return (!usuario) ? <RegisterPage /> : <Navigate to="/user" />

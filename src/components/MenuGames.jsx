@@ -2,6 +2,7 @@ import { React } from '../config/configComponents';
 import { BsFillGrid3X3GapFill, FaListUl } from '../config/configIcons';
 import $ from 'jquery';
 
+
 const MenuGames = ({ setList }) => {
 
     const listView = () => {
@@ -16,6 +17,7 @@ const MenuGames = ({ setList }) => {
     }
 
     return <menu className='menu-games'>
+
         <div className="grid-list">
             <BsFillGrid3X3GapFill onClick={listGrid} />
             <FaListUl onClick={listView} />
@@ -26,6 +28,7 @@ const MenuGames = ({ setList }) => {
             <option value="1">Maior Preço</option>
             <option value="2">Menor Preço</option>
         </select>
+
     </menu>
 }
 

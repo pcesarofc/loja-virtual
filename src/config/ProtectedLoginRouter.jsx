@@ -5,6 +5,7 @@ import { Navigate } from 'react-router-dom';
 
 
 const ProtectedLoginRouter = () => {
+
     const { usuario } = useContext(AuthContext);
 
     return (!usuario) ? <LoginPage /> : <Navigate to="/user" />
