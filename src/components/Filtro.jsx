@@ -10,7 +10,7 @@ const Filtro = ({ setGames, quantity, filtro, setFiltro, setShowMore }) => {
 
     const Filtrar = () => {
 
-        if (filtro != '') {
+        if (filtro !== '') {
             filterGames({ setGames, filtro })
             setShowMore(false)
         } else {

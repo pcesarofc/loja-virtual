@@ -17,7 +17,7 @@ const Cart = () => {
                     <h4>Produtos</h4>
                     <img src={EmptyCart} alt="empty-cart" className='empty-cart'
                         style={{
-                            display: (value != 'R$0,00') ? 'none' : 'flex'
+                            display: (value !== 'R$0,00') ? 'none' : 'flex'
                         }} />
                     {productsCart.map((productsCart) => (<GameOnCart productsCart={productsCart} setProductsCart={setProductsCart} setValue={setValue} />))}
                 </div>
