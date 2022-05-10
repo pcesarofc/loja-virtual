@@ -5,7 +5,7 @@
     @include border(1px, solid, $primary-gray-color);
     @include border-radius(10px, 10px, 10px, 10px);
     @include display(flex, column, space-evenly, center);
-    @include padding(0, 20, 30px, 30px);
+    @include padding(0, 20px, 30px, 30px);
     box-shadow: 1px 5px 8px -1px rgba(0,0,0,0.65);
 
     .title-form{
